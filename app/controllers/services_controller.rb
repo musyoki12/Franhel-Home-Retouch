@@ -26,4 +26,6 @@ class ServicesController < ApplicationController
       render json: [error: "validation errors"], status: :unprocessable_entity
     end
   end
+
+  
 end
