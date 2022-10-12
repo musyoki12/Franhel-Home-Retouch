@@ -10,7 +10,7 @@ class ServicesController < ApplicationController
   end
 
   def show
-    service = Service.find_by(id: params[:id])
+    service = find_service
     if service
       render json: service, status: :ok
     else
@@ -27,5 +27,38 @@ class ServicesController < ApplicationController
     end
   end
 
-  
+  def update
+    service = find_service
+    if service
+      service.update(service_params)
+      if service.valid?
+        render json: service, status: :create
+      else
+        render json: {error: "validation errors"}status: :unprocessable_entity
+      end
+    else
+      render json: {error: "Service not found"}status: :not_found
+    end
+  end
+
+  def delete
+    service = find_service
+    if service
+      service.delete
+      head :no_content
+    else
+      render json: {error: "service not found"}
+    end
+  end
+
+
+  private
+
+  def service_params
+    params.permit(:service, :location, :address, :contact_info, :description)
+  end
+
+  def find_service
+    Service.find_by(id: params[:id])
+  end
 end
