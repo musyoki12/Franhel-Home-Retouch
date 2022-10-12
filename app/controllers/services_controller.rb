@@ -32,22 +32,22 @@ class ServicesController < ApplicationController
     if service
       service.update(service_params)
       if service.valid?
-        render json: service, status: :create
+        render json: service, status: :created
       else
-        render json: {error: "validation errors"}status: :unprocessable_entity
+        render json: {error: "validation errors"},status: :unprocessable_entity
       end
     else
-      render json: {error: "Service not found"}status: :not_found
+      render json: {error: "Service not found"},status: :not_found
     end
   end
 
-  def delete
+  def destroy
     service = find_service
     if service
-      service.delete
+      service.destroy
       head :no_content
     else
-      render json: {error: "service not found"}
+      render json: {error: "service not found"}, status: :not_found
     end
   end
 
