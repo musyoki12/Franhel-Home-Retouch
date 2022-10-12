@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Form( { handleClose } ) {
+function NewServiceForm ({ handleClose }) {
 
   const classes = useStyles();
   const [service, setService] = useState("")
@@ -34,7 +34,26 @@ function Form( { handleClose } ) {
 
   const handleSignup = (e) => {
     e.preventDefault();
-    console.log(service, location, contact, address, description);
+
+    const newService = {
+      service: service,
+      location: location,
+      contact_info: contact,
+      address: address,
+      description: description
+    }
+
+
+    fetch("/services", {
+      method: "POST",
+      header: {
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify(newService)
+    })
+    .then((resp) => resp.json())
+    .then((data) => console.log(data))
+
     handleClose();
   }
 
@@ -68,7 +87,7 @@ function Form( { handleClose } ) {
         <TextField 
           label="Phone number" 
           variant="filled" 
-          type="number"
+          type="text"
           required
           value={contact}
           onChange = {(e) => setContact(e.target.value)}
@@ -91,4 +110,4 @@ function Form( { handleClose } ) {
   )
 }
 
-export default Form
+export default NewServiceForm;

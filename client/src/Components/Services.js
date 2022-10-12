@@ -36,7 +36,6 @@ function Services() {
           </div>
         )
       })}
-
     </div>
   )
 }
