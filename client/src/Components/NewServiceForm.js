@@ -32,7 +32,7 @@ function NewServiceForm ({ handleClose }) {
 
 
 
-  const handleSignup = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const newService = {
@@ -58,7 +58,7 @@ function NewServiceForm ({ handleClose }) {
   }
 
   return (
-      <form className={classes.root} onSubmit={handleSignup}>
+      <form className={classes.root} onSubmit={handleSubmit}>
         <TextField 
           label="Type of service" 
           variant="filled" 
@@ -96,7 +96,7 @@ function NewServiceForm ({ handleClose }) {
        <TextField 
           label="Description of service" 
           variant="filled" 
-          type="text" 
+          type="text"
           required
           value={description}
           onChange = {(e) => setDescription(e.target.value)}
