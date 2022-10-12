@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ServiceList from './ServiceList'
 
 
 
@@ -11,7 +12,10 @@ function Services() {
     .then((data) => setServices(data))
   }, [])
 
-  console.log(services)
+  const onDelete = (id) => {
+    setServices(services.filter((item) => item.id !== id))
+  }
+
 
   return (
     <div>
@@ -20,13 +24,15 @@ function Services() {
       {services.map((service) => {
         return(
           <div  key={service.id}>
-            <ul>
-              <p>{service.service}</p>
-              <li>{service.location}</li>
-              <li>{service.address}</li>
-              <li>{service.contact_info}</li>
-              <li>{service.description}</li>
-            </ul>
+            <ServiceList
+              id={service.id}
+              service={service.service}
+              location={service.location}
+              address={service.address}
+              contact_info={service.contact_info}
+              description={service.description}
+              onDelete={onDelete}
+            />
           </div>
         )
       })}
