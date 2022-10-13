@@ -10,12 +10,12 @@ const Data =[
     "year":2020
     },
     {
-      "id":2,
-        "address":"Mara Garden",
-        "img":'https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aW50ZXJpb3IlMjBkZWNvcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-        "service_type": "interior design",
-        "year":2018
-        },
+    "id":2,
+      "address":"Mara Garden",
+      "img":'https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aW50ZXJpb3IlMjBkZWNvcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+      "service_type": "interior design",
+      "year":2018
+      },
         {
           "id":3,
             "address":"Kimpiski mall",
