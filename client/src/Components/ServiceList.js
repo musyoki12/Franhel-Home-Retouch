@@ -34,7 +34,7 @@ function ServiceList({ id, onDelete, onUpdate, service, location, address, conta
           <li><span>Contact info: </span>{contact_info}</li>
           <li><span>Description of service: </span>{description}</li>
           <div>
-            <button  onClick={handleOpen}>Edit Request</button>
+            <button onClick={handleOpen}>Edit Request</button>
             <button onClick={handleDelete}>Cancel request</button>
           </div>
           

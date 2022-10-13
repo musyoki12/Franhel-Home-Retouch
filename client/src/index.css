@@ -41,6 +41,25 @@ code {
   padding-bottom: 1vh;
 }
 
-.logs ul {
+.logs ul li {
   list-style: none;
+  font-size: 15px;
+}
+
+.logs span {
+  color: orangered;
+}
+
+.logs button {
+  color:  white;
+  background-color: orangered;
+  border-radius: 0 10px;
+  border: none;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-right: 2vw;
+  margin-top: 1vh;
+  font-size: small;
 }
