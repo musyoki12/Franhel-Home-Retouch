@@ -16,3 +16,8 @@ code {
   height: 50vh;
   width: 20vw;
 }
+
+.services-log {
+  border: 1px solid grey;
+  width: 20rem;
+}

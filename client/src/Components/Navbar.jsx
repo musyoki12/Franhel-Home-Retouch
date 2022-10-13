@@ -15,11 +15,10 @@ function Navbar() {
           <div className="navbar-nav">
             <Link className="nav-link active ml-20" aria-current="page" to="/" >Home</Link>
             <Link className="nav-link active ml-20" to="/about-franhel" >About us</Link>
-            <Link className="nav-link ml-3" to="/contact-section" >Contact us</Link>
+            <Link className="nav-link ml-3" to="/services" >Contact us</Link>
             <Link className="nav-link ml-3" to="/login" >Login</Link>
           </div>
-            <button type="button" id ="btx" className ="btn btn-danger ml-auto ">Create account</button>
-
+            <button type="button" id ="btx" className ="btn btn-danger ml-auto" >Create account</button>
             </div>
           </div>
         </nav>

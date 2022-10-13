@@ -31,25 +31,31 @@ function Services() {
   return (
     <div>
       <SubmitRequest onAddService={handleAddService}/>
-      <h1>Services Log</h1>
-      
-      {services.map((service) => {
-        return(
-          <div  key={service.id}>
-            <ServiceList
-              id={service.id}
-              service={service.service}
-              location={service.location}
-              address={service.address}
-              contact_info={service.contact_info}
-              description={service.description}
-              onDelete={handleDelete}
-              onUpdate={handleUpdate}
-
-            />
-          </div>
-        )
-      })}
+      <center><h1>Welcome {"{User}"}</h1></center>
+      <div className='client-area'>
+        <div>
+          User stats
+        </div>
+        <div className='services-log'>
+          <h4>Services Log</h4>
+          {services.map((service) => {
+            return(
+              <div  key={service.id}>
+                <ServiceList
+                  id={service.id}
+                  service={service.service}
+                  location={service.location}
+                  address={service.address}
+                  contact_info={service.contact_info}
+                  description={service.description}
+                  onDelete={handleDelete}
+                  onUpdate={handleUpdate}
+                />
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </div>
   )
 }

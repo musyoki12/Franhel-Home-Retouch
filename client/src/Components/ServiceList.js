@@ -26,22 +26,23 @@ function ServiceList({ id, onDelete, onUpdate, service, location, address, conta
 
   return (
     <div>
-      <ul>
-        <p>{service}</p>
-        <li>{location}</li>
-        <li>{address}</li>
-        <li>{contact_info}</li>
-        <li>{description}</li>
-        <div>
-          <button  onClick={handleOpen}>Edit Request</button>
-          <button onClick={handleDelete}>Cancel request</button>
-        </div>
-        
-        <Dialog open={open} onClose={handleClose}>
-          <UpdateService id={id} onUpdate={onUpdate} handleClose={handleClose}/>
-        </Dialog>
-        
-      </ul>
+      <div className="">
+        <ul>
+          <p>{service}</p>
+          <li>{location}</li>
+          <li>{address}</li>
+          <li>{contact_info}</li>
+          <li>{description}</li>
+          <div>
+            <button  onClick={handleOpen}>Edit Request</button>
+            <button onClick={handleDelete}>Cancel request</button>
+          </div>
+          
+          <Dialog open={open} onClose={handleClose}>
+            <UpdateService id={id} onUpdate={onUpdate} handleClose={handleClose}/>
+          </Dialog>
+        </ul>
+      </div>
     </div>
   )
 }
