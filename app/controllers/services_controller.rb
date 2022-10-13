@@ -20,7 +20,7 @@ class ServicesController < ApplicationController
 
   def create
     service = Service.create(service_params)
-    if service
+    if service.valid?
       render json: service, status: :created
     else
       render json: [error: "validation errors"], status: :unprocessable_entity

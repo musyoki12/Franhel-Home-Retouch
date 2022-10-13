@@ -3,7 +3,7 @@ import { Button, Dialog } from '@material-ui/core'
 import NewServiceForm from "./NewServiceForm";
 
 
-function SubmitRequest() {
+function SubmitRequest({ onAddService }) {
 
  const [open, setOpen] = useState(false);
 
@@ -22,7 +22,7 @@ function SubmitRequest() {
        </Button>
 
        <Dialog open={open} onClose={handleClose}>
-         <NewServiceForm handleClose={handleClose}/>
+         <NewServiceForm onAddService={onAddService} handleClose={handleClose}/>
        </Dialog>
      </div>
   )

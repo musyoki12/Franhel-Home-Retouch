@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ServiceList from './ServiceList'
+import SubmitRequest from './SubmitRequest'
 
 
 
@@ -12,13 +13,17 @@ function Services() {
     .then((data) => setServices(data))
   }, [])
 
-  const onDelete = (id) => {
+  const handleDelete = (id) => {
     setServices(services.filter((item) => item.id !== id))
   }
 
+  const handleAddService = (newService) => {
+    setServices([...services, newService])
+  }
 
   return (
     <div>
+      <SubmitRequest onAddService={handleAddService}/>
       <h1>Services Log</h1>
       
       {services.map((service) => {
@@ -31,7 +36,8 @@ function Services() {
               address={service.address}
               contact_info={service.contact_info}
               description={service.description}
-              onDelete={onDelete}
+              onDelete={handleDelete}
+
             />
           </div>
         )

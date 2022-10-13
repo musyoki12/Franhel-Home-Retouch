@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { TextField, Button, makeStyles } from '@material-ui/core'
 
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -21,9 +20,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function NewServiceForm ({ handleClose, onAddService }) {
-
-  const classes = useStyles();
+function UpdateService({ id, handleClose }) {
   const [service, setService] = useState("")
   const [location, setLocation] = useState("")
   const [contact, setContact] = useState("")
@@ -31,33 +28,29 @@ function NewServiceForm ({ handleClose, onAddService }) {
   const [description, setDescription] = useState("")
 
 
+  const updatedContents = {
+    service: service,
+    location: location,
+    contact_info: contact,
+    address: address,
+    description: description
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    const newService = {
-      service: service,
-      location: location,
-      address: address,
-      contact_info: contact,  
-      description: description
-    }
-
-    fetch("/services", {
-      method: "POST",
+  const handleEdit = () => {
+    fetch(`/services/${id}`, {
+      method: "PATCH",
       headers: {
-        "Content-Type":"application/json"
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(newService)
+      body: JSON.stringify(updatedContents)
     })
     .then((resp) => resp.json())
-    .then((data) => onAddService(data))
-
-    handleClose();
+    .then((data) => console.log(data))
   }
 
   return (
-      <form className={classes.root} onSubmit={handleSubmit}>
+    <form className={classes.root} onSubmit={handleEdit}>
         <TextField 
           label="Type of service" 
           variant="filled" 
@@ -109,4 +102,4 @@ function NewServiceForm ({ handleClose, onAddService }) {
   )
 }
 
-export default NewServiceForm;
+export default UpdateService

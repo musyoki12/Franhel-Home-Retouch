@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+import UpdateService from './UpdateService'
+import { Button, Dialog } from '@material-ui/core'
 
 
 function ServiceList({ id, onDelete, service, location, address, contact_info, description }) {
+  const [open, setOpen] = useState(false)
 
-  const handleEdit = () => {
+  const handleOpen = () => {
+    setOpen(true)
+  }
 
+  const handleClose = () => {
+    setOpen(false)
   }
 
   const handleDelete = () => {
@@ -23,9 +30,12 @@ function ServiceList({ id, onDelete, service, location, address, contact_info, d
         <li>{contact_info}</li>
         <li>{description}</li>
         <div>
-          <button onClick={handleEdit}>Edit request</button>
+          <button  onClick={handleOpen}>Edit</button>
           <button onClick={handleDelete}>Cancel request</button>
         </div>
+        <Dialog open={open} onClose={handleClose}>
+          <UpdateService />
+        </Dialog>
         
       </ul>
     </div>
