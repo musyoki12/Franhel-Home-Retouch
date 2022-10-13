@@ -12,3 +12,7 @@ code {
     monospace;
 }
 
+.image img {
+  height: 50vh;
+  width: 20vw;
+}

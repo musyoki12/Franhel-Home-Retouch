@@ -6,7 +6,7 @@ function AboutUs() {
 
 
   return (
-    <div>
+    <div className='image'>
       <h1>About <span>Franhel Home Retouch</span></h1>
       <div>
         <h2>Who We Are!</h2>
