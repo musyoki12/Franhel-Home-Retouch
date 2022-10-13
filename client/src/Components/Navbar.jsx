@@ -10,14 +10,15 @@ function Navbar() {
       <div className='container m-0 '>
         <nav className="navbar navbar-expand-lg bg-light m-2">
         <div className="container-fluid">
-        <a className="navbar-brand ">Franhel HOME <br/><span> RETOUCH</span></a>
+        <Link className="navbar-brand " to="/">Franhel HOME <br/><span> RETOUCH</span></Link>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <Link className="nav-link active ml-20" aria-current="page" href="#">About Us</Link>
-            <Link className="nav-link ml-3" href="#">Contact Us</Link>
-            <Link className="nav-link ml-3" href="#">Login</Link>
+            <Link className="nav-link active ml-20" aria-current="page" to="/" >Home</Link>
+            <Link className="nav-link active ml-20" to="/about-franhel" >About us</Link>
+            <Link className="nav-link ml-3" to="/contact-section" >Contact us</Link>
+            <Link className="nav-link ml-3" to="/login" >Login</Link>
           </div>
-            <button type="button" id ="btx" className ="btn btn-danger ml-auto ">Create an Account</button>
+            <button type="button" id ="btx" className ="btn btn-danger ml-auto ">Create account</button>
 
             </div>
           </div>
