@@ -17,7 +17,30 @@ code {
   width: 20vw;
 }
 
+.client-area {
+  display: flex;
+  justify-content: space-between;
+}
+
 .services-log {
-  border: 1px solid grey;
-  width: 20rem;
+  border: 1px solid beige;
+  width:50vw;
+  padding: 3vh;
+  background-color: beige;
+  border-radius: 10px;
+  margin-right: 2vw;
+}
+
+.logs {
+  border: 1px solid beige;
+  background-color: white;
+  border-radius: 0 50px;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+}
+
+.logs ul {
+  list-style: none;
 }

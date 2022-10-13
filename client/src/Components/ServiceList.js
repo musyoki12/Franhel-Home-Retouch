@@ -26,13 +26,13 @@ function ServiceList({ id, onDelete, onUpdate, service, location, address, conta
 
   return (
     <div>
-      <div className="">
+      <div className="logs">
         <ul>
-          <p>{service}</p>
-          <li>{location}</li>
-          <li>{address}</li>
-          <li>{contact_info}</li>
-          <li>{description}</li>
+          <h6><span>Service: </span>{service}</h6>
+          <li><span>Location: </span>{location}</li>
+          <li><span>Service: </span>{address}</li>
+          <li><span>Contact info: </span>{contact_info}</li>
+          <li><span>Description of service: </span>{description}</li>
           <div>
             <button  onClick={handleOpen}>Edit Request</button>
             <button onClick={handleDelete}>Cancel request</button>

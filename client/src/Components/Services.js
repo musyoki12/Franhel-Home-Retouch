@@ -31,7 +31,7 @@ function Services() {
   return (
     <div>
       <SubmitRequest onAddService={handleAddService}/>
-      <center><h1>Welcome {"{User}"}</h1></center>
+      <center style={{margin: 5+"vh"}} ><h1>Welcome {"{User}"}</h1></center>
       <div className='client-area'>
         <div>
           User stats
