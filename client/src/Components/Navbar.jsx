@@ -7,31 +7,35 @@ function Navbar() {
   return (
     
     <div className='bg-img'>
-      <div className='container m-0 '>
-        <nav className="navbar navbar-expand-lg bg-light m-2">
-        <div className="container-fluid">
-        <Link className="navbar-brand " to="/">Franhel HOME <br/><span> RETOUCH</span></Link>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
-            <Link className="nav-link active ml-20" aria-current="page" to="/" >Home</Link>
-            <Link className="nav-link active ml-20" to="/about-franhel" >About us</Link>
-            <Link className="nav-link ml-3" to="/services" >Contact us</Link>
-            <Link className="nav-link ml-3" to="/login" >Login</Link>
-          </div>
-            <button type="button" id ="btx" className ="btn btn-danger ml-auto" >Create account</button>
+      <div className=''>
+        <nav className="navbar navbar-expand-lg nav-color">
+          <div className="container-fluid">
+            <Link className="navbar-brand " style={{color: "white", fontSize: 17+"px", marginLeft: 1+"vw"}} to="/">Franhel <span style={{color: "orangered"}}> HOME <br/> RETOUCH</span></Link>
+            <div className="nav-icon">
+              <div className="nav-icons">
+                <Link className="icon nav-link" aria-current="page" to="/" >Home</Link>
+                <Link className="icon nav-link" to="/about-franhel" >About us</Link>
+                <Link className="icon nav-link" to="/services" >Contact us</Link>
+                <Link className="icon nav-link" to="/login" >Login</Link>
+              </div>
+              <button type="button" id ="btx" className ="btn btn-danger ml-auto" >Create account</button>
             </div>
           </div>
         </nav>
-        <div className='para'>
-          <h1 className='txt'>Franhel Home Retouch </h1>
-          <h1 className='txt-2'>transform your house to a Home</h1>
-        </div>
 
-        <h3 className='sub'>Subscribe To Our Newsletter</h3><br/>
-        <form class="d-flex" role="search"> 
-          <input class="form-control me-2" type="search" />
-          <button class="btn btn-danger" type="submit">Subscribe</button>
-        </form>
+        <center className="home-tab">
+          <div className='para'>
+            <h2 className='txt'>Franhel Home Retouch</h2> 
+            <h5 className="txt-2"> transforms your house to a HOME</h5>
+          </div>
+
+          <p className='sub'>Subscribe to our newsletter</p>
+          <form class="d-flex" role="search">
+            <label className='form-label'></label>
+            <input class="form-control me-2" type="search" />
+            <button class="btn btn-danger color" type="submit">Subscribe</button>
+          </form>
+        </center>
       </div>
     </div>
   )

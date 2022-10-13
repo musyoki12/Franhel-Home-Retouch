@@ -34,11 +34,11 @@ function Services() {
       <SubmitRequest onAddService={handleAddService}/>
       <center style={{margin: 5+"vh"}} ><h1>Welcome {"{User}"}</h1></center>
       <div className='client-area'>
-        <div>
+        <div style={{marginLeft: 2+"vw"}}>
           <ServiceDets />
         </div>
         <div className='services-log'>
-          <h4>Services Log</h4>
+          <center><h4>Services Log</h4></center>
           {services.map((service) => {
             return(
               <div  key={service.id}>

@@ -10,9 +10,9 @@ function ServiceDets() {
     <>
       {SERVICE.map((service) => {
         return (
-          <div className="card card-2" style={{width: 18+"rem"}}>
+          <div className="card col-sm-6 card-2" style={{width: 15+"rem", marginBottom: 2+"vw"}}>
             <div>
-              <img src={service.image} />
+              {/* <img src={service.image} /> */}
             </div>
             <div className="card-body">
               <h5 className="card-title">{service.service}</h5>
@@ -20,7 +20,7 @@ function ServiceDets() {
               <h6 className="card-subtitle mb-2 text-muted">Takes appr' <span>{service.duration}</span> days</h6>
               <h6 className="card-subtitle mb-2 text-muted"><span>{service.people}</span> ~ people who have used the service</h6>
               <p className="card-text">{service.description}</p>
-              <Link className="" to="/more-details" ><span>Read more</span></Link>
+              <Link className=""><span>Read more</span></Link>
             </div>
           </div>
         )
