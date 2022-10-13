@@ -17,8 +17,11 @@ function ServiceList({ id, onDelete, onUpdate, service, location, address, conta
   const handleDelete = () => {
     fetch(`/services/${id}`, {
       method: "DELETE",
+    }).then((resp) => {
+      if (resp.ok) {
+        onDelete(id)
+      }
     })
-    onDelete(id)
   }
 
   return (
@@ -30,7 +33,7 @@ function ServiceList({ id, onDelete, onUpdate, service, location, address, conta
         <li>{contact_info}</li>
         <li>{description}</li>
         <div>
-          <button  onClick={handleOpen}>Edit</button>
+          <button  onClick={handleOpen}>Edit Request</button>
           <button onClick={handleDelete}>Cancel request</button>
         </div>
         <Dialog open={open} onClose={handleClose}>

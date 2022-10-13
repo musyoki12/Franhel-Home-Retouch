@@ -103,7 +103,7 @@ function NewServiceForm ({ handleClose, onAddService }) {
 
         <div>
           <Button variant="contained" onClick={handleClose}>Cancel</Button>
-          <Button type="submit" variant="contained">Make a Request</Button>
+          <Button type="submit" variant="contained">Send Request</Button>
         </div>
       </form>
   )
