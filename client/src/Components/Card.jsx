@@ -5,12 +5,12 @@ function Card (props) {
     <>
     {props.details.map((value,index) =>(
     <div className='col' style={{margin: 2+"vh"}}>
-      <div className="card" key={index} style={{width: 20 + 'vw'}}>
-        <img src={value.img} style={{height:40 + 'vh', width:20 + 'vw'}} alt="House" className="image"/>
-        <div className="card-body">
-          <h5>Address:{value.address}</h5>
-          <h5>Service_type:{value.service_type}</h5>
-          <h5>Year:{value.year}</h5>
+      <div className="card" key={index} style={{width: 18 + 'rem'}}>
+        <img src={value.img} style={{height:18 + 'rem', width:18 + 'rem'}} alt="House" className="image"/>
+        <div className="card-body" style={{maxHeight: 10+"rem", minHeight: 8+"rem"}}>
+          <h6>Address: <span>{value.address}</span></h6>
+          <h6>Service: <span>{value.service_type}</span></h6>
+          <h6>Year: <span>{value.year}</span></h6>
         </div>
       </div>
     </div>
