@@ -21,8 +21,11 @@ function Services() {
     setServices([...services, newService])
   }
 
-  const handleUpdate = () => {
-    console.log("first")
+  const handleUpdate = (updatedService) => {
+    const updatedArray = services.map((service) => {
+      return service.id === updatedService.id ? updatedService : service
+    })
+    setServices(updatedArray)
   }
 
   return (
