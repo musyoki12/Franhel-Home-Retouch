@@ -36,6 +36,7 @@ function ServiceList({ id, onDelete, onUpdate, service, location, address, conta
           <button  onClick={handleOpen}>Edit Request</button>
           <button onClick={handleDelete}>Cancel request</button>
         </div>
+        
         <Dialog open={open} onClose={handleClose}>
           <UpdateService id={id} onUpdate={onUpdate} handleClose={handleClose}/>
         </Dialog>
