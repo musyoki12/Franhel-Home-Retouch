@@ -20,12 +20,14 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function UpdateService({ id, handleClose }) {
-  const [service, setService] = useState("")
-  const [location, setLocation] = useState("")
-  const [contact, setContact] = useState("")
-  const [address, setAddress] = useState("")
-  const [description, setDescription] = useState("")
+function UpdateService({ id, handleClose, onUpdate}) {
+
+  const classes = useStyles();
+  const [service, setService] = useState()
+  const [location, setLocation] = useState()
+  const [contact, setContact] = useState()
+  const [address, setAddress] = useState()
+  const [description, setDescription] = useState()
 
 
   const updatedContents = {
@@ -36,8 +38,9 @@ function UpdateService({ id, handleClose }) {
     description: description
   }
 
+  const handleEdit = (e) => {
+    e.preventDefault()
 
-  const handleEdit = () => {
     fetch(`/services/${id}`, {
       method: "PATCH",
       headers: {
@@ -46,7 +49,9 @@ function UpdateService({ id, handleClose }) {
       body: JSON.stringify(updatedContents)
     })
     .then((resp) => resp.json())
-    .then((data) => console.log(data))
+    .then((data) => onUpdate(data))
+
+    handleClose()
   }
 
   return (
@@ -54,7 +59,6 @@ function UpdateService({ id, handleClose }) {
         <TextField 
           label="Type of service" 
           variant="filled" 
-          required
           value={service}
           onChange = {(e) => setService(e.target.value)}
         />
@@ -62,7 +66,6 @@ function UpdateService({ id, handleClose }) {
         <TextField 
           label="Location of building" 
           variant="filled" 
-          required
           value={location}
           onChange = {(e) => setLocation(e.target.value)}
         />
@@ -71,7 +74,6 @@ function UpdateService({ id, handleClose }) {
           label="Address information" 
           variant="filled" 
           type="text" 
-          required
           value={address}
           onChange = {(e) => setAddress(e.target.value)}
         />
@@ -80,7 +82,6 @@ function UpdateService({ id, handleClose }) {
           label="Phone number" 
           variant="filled" 
           type="text"
-          required
           value={contact}
           onChange = {(e) => setContact(e.target.value)}
         />
@@ -89,17 +90,16 @@ function UpdateService({ id, handleClose }) {
           label="Description of service" 
           variant="filled" 
           type="text"
-          required
           value={description}
           onChange = {(e) => setDescription(e.target.value)}
         />
 
         <div>
           <Button variant="contained" onClick={handleClose}>Cancel</Button>
-          <Button type="submit" variant="contained">Make a Request</Button>
+          <Button type="submit" variant="contained">Save</Button>
         </div>
       </form>
   )
 }
 
-export default UpdateService
+export default UpdateService;

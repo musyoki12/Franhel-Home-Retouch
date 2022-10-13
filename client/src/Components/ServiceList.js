@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import UpdateService from './UpdateService'
-import { Button, Dialog } from '@material-ui/core'
+import { Dialog } from '@material-ui/core'
 
 
-function ServiceList({ id, onDelete, service, location, address, contact_info, description }) {
+function ServiceList({ id, onDelete, onUpdate, service, location, address, contact_info, description }) {
   const [open, setOpen] = useState(false)
 
   const handleOpen = () => {
@@ -34,7 +34,7 @@ function ServiceList({ id, onDelete, service, location, address, contact_info, d
           <button onClick={handleDelete}>Cancel request</button>
         </div>
         <Dialog open={open} onClose={handleClose}>
-          <UpdateService />
+          <UpdateService id={id} onUpdate={onUpdate} handleClose={handleClose}/>
         </Dialog>
         
       </ul>

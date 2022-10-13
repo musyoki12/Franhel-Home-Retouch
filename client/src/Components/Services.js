@@ -21,6 +21,10 @@ function Services() {
     setServices([...services, newService])
   }
 
+  const handleUpdate = () => {
+    console.log("first")
+  }
+
   return (
     <div>
       <SubmitRequest onAddService={handleAddService}/>
@@ -37,6 +41,7 @@ function Services() {
               contact_info={service.contact_info}
               description={service.description}
               onDelete={handleDelete}
+              onUpdate={handleUpdate}
 
             />
           </div>
