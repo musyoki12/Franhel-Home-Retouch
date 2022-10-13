@@ -26,7 +26,7 @@ function NewServiceForm ({ handleClose }) {
   const classes = useStyles();
   const [service, setService] = useState("")
   const [location, setLocation] = useState("")
-  const [contact, setContact] = useState("")
+  const [contact_info, setContact] = useState("")
   const [address, setAddress] = useState("")
   const [description, setDescription] = useState("")
 
@@ -38,15 +38,16 @@ function NewServiceForm ({ handleClose }) {
     const newService = {
       service: service,
       location: location,
-      contact_info: contact,
       address: address,
+      contact_info: contact_info,  
       description: description
     }
 
+    console.log(newService)
 
     fetch("/services", {
       method: "POST",
-      header: {
+      headers: {
         "Content-Type":"application/json"
       },
       body: JSON.stringify(newService)
@@ -89,7 +90,7 @@ function NewServiceForm ({ handleClose }) {
           variant="filled" 
           type="text"
           required
-          value={contact}
+          value={contact_info}
           onChange = {(e) => setContact(e.target.value)}
         />
 
