@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ServiceList from './ServiceList'
 import SubmitRequest from './SubmitRequest'
+import SERVICE from './ServiceData'
 
 
 
@@ -34,7 +35,7 @@ function Services() {
       <center style={{margin: 5+"vh"}} ><h1>Welcome {"{User}"}</h1></center>
       <div className='client-area'>
         <div>
-          User stats
+          {}
         </div>
         <div className='services-log'>
           <h4>Services Log</h4>

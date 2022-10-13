@@ -1,9 +1,6 @@
 import React from 'react'
 import { Link } from '@material-ui/core'
-
-
 import './ShowRoom.css'
-
 import Data from './Data'
 import Card from './Card'
 
@@ -16,6 +13,7 @@ function ShowRoom (){
       <div className ="row style">
         <Card details ={Data}/>
       </div>
+
       <center className="color">
         <h1 className='show'>Our Services</h1>
         <div className='flex'>
