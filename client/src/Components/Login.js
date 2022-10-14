@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Login ({ handleClose, onLogin }) {
+function Login ({ handleNotLogin, onLogin }) {
 
   const classes = useStyles();
   const [username, setUsername] = useState("")
@@ -46,12 +46,11 @@ function Login ({ handleClose, onLogin }) {
     .then((resp) => resp.json())
     .then((data) => onLogin(data))
 
-    handleClose();
+    handleNotLogin();
   }
 
   return (
       <form className={classes.root} onSubmit={handleSubmit}>
-
         <TextField 
           label="Username" 
           variant="filled" 

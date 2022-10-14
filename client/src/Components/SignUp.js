@@ -29,6 +29,8 @@ function SignUp ({ handleClose, onSignUp }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("")
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
 
   const handleSubmit = (e) => {

@@ -5,9 +5,12 @@ import { Dialog } from '@material-ui/core'
 import SignUp from './SignUp'
 import Login from "./Login"
 
-function Navbar({ onSignUp, onLogin }) {
 
+function Navbar({ onSignUp, onLogin }) {
+  
   const [open, setOpen] = useState(false);
+  const [login, setLogin] = useState(false);
+
 
   const handleOpen = () => {
     setOpen(true)
@@ -16,6 +19,16 @@ function Navbar({ onSignUp, onLogin }) {
   const handleClose = () => {
     setOpen(false)
   }
+
+  const handleLogin = () => {
+    console.log("try")
+    setLogin(true)
+  }
+ 
+  const handleNotLogin = () => {
+    setLogin(false)
+  }
+
 
 
   return (
@@ -30,18 +43,21 @@ function Navbar({ onSignUp, onLogin }) {
                 <Link className="icon nav-link" aria-current="page" to="/" >Home</Link>
                 <Link className="icon nav-link" to="/about-franhel" >About us</Link>
                 <Link className="icon nav-link" to="/services" >Contact us</Link>
-                <Link className="icon nav-link" to="/login" onClick={handleOpen}>Login</Link>
+                <Link className="icon nav-link" onClick={handleLogin}>Login</Link>
               </div>
               <button type="button" className ="btn btn-danger ml-auto" onClick={handleOpen}>Create account</button>
             </div>
           </div>
         </nav>
 
+
         <Dialog open={open} onClose={handleClose}>
-         <SignUp onSignUp={onSignUp} handleClose={handleClose}/>
+         <SignUp onSignUp={onSignUp} handleClose={handleClose} />
        </Dialog>
-       <Dialog open={open} onClose={handleClose}>
-         <Login onLogin={onLogin}/>
+
+
+       <Dialog login={login} onClose={handleNotLogin}>
+         <Login onLogin={onLogin} />
        </Dialog>
 
         <center className="home-tab">
