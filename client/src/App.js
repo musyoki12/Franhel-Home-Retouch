@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
 
 
 function App() {
@@ -42,7 +43,8 @@ function App() {
          ) : (
           <LoginForm Login={Login} error={error} />
         )} 
-    </div>   
+         <SignupForm />
+    </div>  
    );
 }
 export default App;
