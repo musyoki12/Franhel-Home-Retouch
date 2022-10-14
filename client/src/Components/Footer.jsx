@@ -8,19 +8,18 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 function Footer (){
   return (
     <div className='footer'>
-      <h3 className="fra">FRANHEL HOME RETOUCH</h3>
+      <h3 className="fra">FRANHEL <span className="spex">HOME RETOUCH</span></h3>
         <section className='sec1'>
-            <p>Lorem Ipsum is simply dummy <br/>
-            text of the printing and typesetting<br/>
-             industry. Lorem Ipsum has been the<br/>
-              industry's standard dummy text ever since<br/>
-               the 1500s, when an unknown printer book
+            <p className='bodr'>Franhel  enables home owners and renters <br/>
+            to inquire and receive house renovation services<br/>
+            at the comfort of their coach.<br/>
+            <br/>
+                
                </p>
              
       
         <div className='sec2'>
-            <h4>Quick Links </h4> 
-            <br/>
+            <h4 className="title2">About Us </h4> 
             <ul>
               <li>Our Story</li>
               <li>Login</li>
@@ -28,13 +27,29 @@ function Footer (){
               <li>ShowRoom</li>
             </ul> 
         </div>
+        <div className='sec3'>
+            <h4 className='title'>Quick Links </h4> 
+            <ul>
+              <li>Privacy Policy</li>
+              <li>Management</li>
+              <li>Help Centre</li>
+              <li>Blog</li>
+            </ul> 
+        </div>
         </section>
         
         <hr/>
         <div className ="social">
-        <TwitterIcon/>
-        <LinkedInIcon/>
-        <FacebookRoundedIcon/>
+
+        <TwitterIcon size="large"
+  aria-label="add" 
+  sx={{width:40, height:40, marginLeft:2}} />
+        <LinkedInIcon size="large"
+  aria-label="add" 
+  sx={{width:40, height:40, marginLeft:2}} />
+        <FacebookRoundedIcon size="large"
+  aria-label="add" 
+  sx={{width:40, height:40, fontsize: "40px", marginLeft: 2}} />
 
         <div className='copy'>All Rights Reserved @2022 </div>
         </div>

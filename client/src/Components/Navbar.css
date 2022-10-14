@@ -41,3 +41,7 @@
   color:orchid;
   /* background-color:burlywood; */
 }
+.navbar-nav ul li{
+  display: flex;
+  float:left;
+}
