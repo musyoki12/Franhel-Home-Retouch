@@ -21,7 +21,6 @@ function Navbar({ onSignUp, onLogin }) {
   }
 
   const handleLogin = () => {
-    console.log("try")
     setOn(true)
   }
  
