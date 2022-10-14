@@ -1,0 +1,31 @@
+.footer{
+
+
+    background-color: #a3a092;
+    min-height: 200px;
+    color:whitesmoke
+
+}
+
+
+.sec1{
+    color:rgb(17, 0, 255);
+    display:flex;
+}
+.sec2{
+    float:right;
+    margin-right:140px;
+    list-style: none;
+
+    
+}
+.fra{
+color:orange
+}
+.social{
+   
+    margin-left: 2px;
+}
+.copy{
+    float:right
+}
