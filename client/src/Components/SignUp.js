@@ -21,14 +21,14 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function NewServiceForm ({ handleClose, onAddService }) {
+function SignUp ({ handleClose, onSignUp }) {
 
   const classes = useStyles();
-  const [service, setService] = useState("")
-  const [location, setLocation] = useState("")
-  const [contact, setContact] = useState("")
-  const [address, setAddress] = useState("")
-  const [description, setDescription] = useState("")
+  const [name, setName] = useState("")
+  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [passwordConfirmation, setPasswordConfirmation] = useState("")
 
 
 
@@ -36,11 +36,11 @@ function NewServiceForm ({ handleClose, onAddService }) {
     e.preventDefault();
 
     const newService = {
-      service: service,
-      location: location,
-      address: address,
-      contact_info: contact,  
-      description: description
+      name: name,
+      username: username,
+      email: email,
+      password: password,
+      password_confirmation: passwordConfirmation
     }
 
     fetch("/services", {
@@ -51,7 +51,7 @@ function NewServiceForm ({ handleClose, onAddService }) {
       body: JSON.stringify(newService)
     })
     .then((resp) => resp.json())
-    .then((data) => onAddService(data))
+    .then((data) => onSignUp(data))
 
     handleClose();
   }
@@ -62,25 +62,25 @@ function NewServiceForm ({ handleClose, onAddService }) {
           label="Type of service" 
           variant="filled" 
           required
-          value={service}
-          onChange = {(e) => setService(e.target.value)}
+          value={name}
+          onChange = {(e) => setName(e.target.value)}
         />
 
         <TextField 
           label="Location of building" 
           variant="filled" 
           required
-          value={location}
-          onChange = {(e) => setLocation(e.target.value)}
+          value={username}
+          onChange = {(e) => setUsername(e.target.value)}
         />
 
         <TextField 
           label="Address information" 
           variant="filled" 
-          type="text" 
+          type="email" 
           required
-          value={address}
-          onChange = {(e) => setAddress(e.target.value)}
+          value={email}
+          onChange = {(e) => setEmail(e.target.value)}
         />
 
         <TextField 
@@ -88,8 +88,8 @@ function NewServiceForm ({ handleClose, onAddService }) {
           variant="filled" 
           type="text"
           required
-          value={contact}
-          onChange = {(e) => setContact(e.target.value)}
+          value={[password]}
+          onChange = {(e) => setPassword(e.target.value)}
         />
 
        <TextField 
@@ -97,8 +97,8 @@ function NewServiceForm ({ handleClose, onAddService }) {
           variant="filled" 
           type="text"
           required
-          value={description}
-          onChange = {(e) => setDescription(e.target.value)}
+          value={passwordConfirmation}
+          onChange = {(e) => setPasswordConfirmation(e.target.value)}
         />
 
         <div>
@@ -109,4 +109,4 @@ function NewServiceForm ({ handleClose, onAddService }) {
   )
 }
 
-export default NewServiceForm;
+export default SignUp;
