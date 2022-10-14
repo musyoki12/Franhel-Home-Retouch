@@ -7,9 +7,9 @@ import Login from "./Login"
 
 
 function Navbar({ onSignUp, onLogin }) {
-  
+
   const [open, setOpen] = useState(false);
-  const [login, setLogin] = useState(false);
+  const [on, setOn] = useState(false);
 
 
   const handleOpen = () => {
@@ -22,11 +22,11 @@ function Navbar({ onSignUp, onLogin }) {
 
   const handleLogin = () => {
     console.log("try")
-    setLogin(true)
+    setOn(true)
   }
  
   const handleNotLogin = () => {
-    setLogin(false)
+    setOn(false)
   }
 
 
@@ -56,7 +56,7 @@ function Navbar({ onSignUp, onLogin }) {
        </Dialog>
 
 
-       <Dialog login={login} onClose={handleNotLogin}>
+       <Dialog on={on} onClose={handleNotLogin}>
          <Login onLogin={onLogin} />
        </Dialog>
 

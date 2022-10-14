@@ -87,7 +87,7 @@ function SignUp ({ handleClose, onSignUp }) {
         <TextField 
           label="password" 
           variant="filled" 
-          type="text"
+          type="password"
           required
           value={[password]}
           onChange = {(e) => setPassword(e.target.value)}
@@ -96,7 +96,7 @@ function SignUp ({ handleClose, onSignUp }) {
        <TextField 
           label="Confirm password" 
           variant="filled" 
-          type="text"
+          type="password"
           required
           value={passwordConfirmation}
           onChange = {(e) => setPasswordConfirmation(e.target.value)}
