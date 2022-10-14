@@ -82,4 +82,13 @@ input, button {
     background-position: 100% 0%;
   
   }
+  .modal {
+    display: block; 
+    position: relative;
+    right: 30px;
+    top: 30px;
+    width: 500px; /* Full width */
+    height: 500px; /* Full height */
+    padding-top: 50px;
+  }
   

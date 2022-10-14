@@ -2,8 +2,6 @@ import { useState } from 'react';
 import './SignupForm.css';
 
 export default function Form() {
-
-    // States for registration
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

@@ -12,6 +12,7 @@ function LoginForm({ Login, error }) {
     
     
     return (
+        <div className="modal">
         <form onSubmit={submitHandler}>
             <div className="inner-form">
                 <h2>Login</h2>
@@ -31,6 +32,7 @@ function LoginForm({ Login, error }) {
                 <input type="submit" value="LOGIN" />
             </div>
         </form>
+    </div>
     )
   
 }

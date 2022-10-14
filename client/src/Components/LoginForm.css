@@ -110,7 +110,19 @@ input .inner-form .form-group input:focus {
   margin-bottom: 30px;
 }
 
-.welcom h2 span {
+.welcome h2 span {
   color: #FE4680;
   font-weight: 700;
+}
+.modal {
+  display: block; 
+  position: relative;
+  justify-content: space-evenly;
+  z-index: 1; 
+  left: 50px;
+  top: 30px;
+  width: 300px; /* Full width */
+  height: 100%; /* Full height */
+  overflow:hidden; /* Enable scroll if needed */
+  padding-top: 60px;
 }
