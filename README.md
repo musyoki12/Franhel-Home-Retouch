@@ -19,7 +19,7 @@
  - [License](#license)
 
  ## Description
- This project is a web application for Franhel Home Retouch that enables home owners and renters to inquire and receive house renovation services at the comfort of their coach. An interested user can visit the website, look up for some of the works that Franhel has done, create an account with and request for a service that they want. The services range from interior and exterior painting and design, plumbing services, electrical installation, to tiling and varnishing. The admin can then reach out to them and inquire more about their expectations or scope of work. <br>
+ This project is a web application for Franhel Home Retouch that enables homeowners and renters to inquire about and receive house renovation services from their couch's comfort. An interested user can visit the website, look for some of the work Franhel has done, create an account and request a service they want. The services range from interior and exterior painting and design, plumbing services, and electrical installation, to tiling and varnishing. The admin can then reach out to them and inquire more about their expectations or scope of work. <br>
  [Back to top](#franhel-home-retouch)
 
  ## Features
