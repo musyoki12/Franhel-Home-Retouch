@@ -11,4 +11,15 @@ class SessionsController < ApplicationController
         end
     end
 
+# Logout Feature
+    def destroy
+        client = Client.find_by(id: session[:client_id])
+        if client 
+            session.delete :client_id
+            head :no_content
+        else
+            render json: { errors: ["Not authorized"]}, status: :unauthorized
+        end 
+    end
+
 end
