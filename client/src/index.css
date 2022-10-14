@@ -11,3 +11,74 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.image img {
+  height: 50vh;
+  width: 20vw;
+}
+
+.client-area {
+  display: flex;
+  justify-content: space-between;
+}
+
+.services-log {
+  border: 1px solid beige;
+  width:50vw;
+  padding: 3vh;
+  background-color: beige;
+  border-radius: 10px;
+  margin-right: 2vw;
+}
+
+.logs {
+  border: 1px solid beige;
+  background-color: white;
+  border-radius: 0 50px;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+}
+
+.logs ul li {
+  list-style: none;
+  font-size: 15px;
+}
+
+.logs span {
+  color: orangered;
+}
+
+.logs button {
+  color:  white;
+  background-color: orangered;
+  border-radius: 0 10px;
+  border: none;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-right: 2vw;
+  margin-top: 1vh;
+  font-size: small;
+}
+
+.card-2 img {
+  height: 100px;
+  width: 100px;
+  margin-top: 20px;
+  margin-left: 5px;
+  float: left;
+  padding: 0 20px 20px 0;
+}
+
+.card-2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-2 span {
+  color: orangered;
+  list-style: none;
+}
