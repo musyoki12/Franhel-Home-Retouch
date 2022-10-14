@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import LoginForm from './components/LoginForm';
+import LoginForm from './LoginForm';
+import SignupForm from './SignupForm';
+
 
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
   const [error, setError] = useState("");
 
   const Login = details => {
-    console.log(details);
+    console.log(details)
     
     if (details.email === adminUser.email && details.password === adminUser.password) {
         console.log("Logged in");
@@ -42,7 +44,8 @@ function App() {
          ) : (
           <LoginForm Login={Login} error={error} />
         )} 
-    </div>   
+         <SignupForm />
+    </div> 
    );
 }
 export default App;
