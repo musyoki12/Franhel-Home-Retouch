@@ -49,12 +49,11 @@
   background-color: #4b2004a1;
 }
 
-.home-tab button {
+.home-tab button, .nav-icon button{
   background-color: orangered;
 }
 
 .nav-color {
-  border: 1px solid #4b2004a1;
   background-color: #4b2004a1;
   height: 10vh;
   color: white;
@@ -77,7 +76,7 @@
   /* color: red; */
 
   text-align: center;
-  color:orchid;
+  color:white;
   /* background-color:burlywood; */
 }
 .navbar-nav ul li{

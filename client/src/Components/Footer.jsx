@@ -10,12 +10,11 @@ function Footer (){
     <div className='footer'>
       <h3 className="fra">FRANHEL <span className="spex">HOME RETOUCH</span></h3>
         <section className='sec1'>
-            <p className='bodr'>Franhel  enables home owners and renters <br/>
-            to inquire and receive house renovation services<br/>
-            at the comfort of their coach.<br/>
-            <br/>
-                
-               </p>
+            <p className='footer-body'>
+              Franhel enables home owners and renters <br/>
+              to inquire and receive house renovation services<br/>
+              at the comfort of their coach.<br/>
+           </p>
              
       
         <div className='sec2'>
@@ -42,14 +41,14 @@ function Footer (){
         <div className ="social">
 
         <TwitterIcon size="large"
-  aria-label="add" 
-  sx={{width:40, height:40, marginLeft:2}} />
+        aria-label="add" 
+        sx={{width:40, height:40, marginLeft:2}} />
         <LinkedInIcon size="large"
-  aria-label="add" 
-  sx={{width:40, height:40, marginLeft:2}} />
+        aria-label="add" 
+        sx={{width:40, height:40, marginLeft:2}} />
         <FacebookRoundedIcon size="large"
-  aria-label="add" 
-  sx={{width:40, height:40, fontsize: "40px", marginLeft: 2}} />
+        aria-label="add" 
+        sx={{width:40, height:40, fontsize: "40px", marginLeft: 2}} />
 
         <div className='copy'>All Rights Reserved @2022 </div>
         </div>
