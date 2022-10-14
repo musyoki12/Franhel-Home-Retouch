@@ -1,9 +1,12 @@
 import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 
 function Navbar() {
+  const [user, setUser] = useState(false)
+
   return (
     
     <div className='bg-img'>
@@ -18,7 +21,7 @@ function Navbar() {
                 <Link className="icon nav-link" to="/services" >Contact us</Link>
                 <Link className="icon nav-link" to="/login" >Login</Link>
               </div>
-              <button type="button" id ="btx" className ="btn btn-danger ml-auto" >Create account</button>
+              {!user ? (<Link type="button" className ="btn" ><button>Create account</button></Link>):(null)}
             </div>
           </div>
         </nav>

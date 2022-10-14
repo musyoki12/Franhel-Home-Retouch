@@ -71,6 +71,10 @@
   
 }
 
+.nav-icon button {
+  background-color: orangered;
+}
+
 .nav-icons {
   display: flex;
   justify-content: center;
