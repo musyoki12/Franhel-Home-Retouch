@@ -1,26 +1,51 @@
-import React from 'react'
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import AboutUs from './AboutUs'
-import Services from './Services'
-import Navbar from './Navbar'
-import ShowRoom from './ShowRoom'
+import React, { useState } from 'react';
+import LoginForm from './LoginForm';
+import SignupForm from './SignupForm';
 
 
 
 function App() {
+  const adminUser = {
+    email: "admin@gmail.com",
+    password: "admin123"
+  }
 
+  const [user, setUser] = useState({name: "", email: ""});
+  const [error, setError] = useState("");
+
+  const Login = details => {
+    console.log(details);
+    
+    if (details.email === adminUser.email && details.password === adminUser.password) {
+        console.log("Logged in");
+    
+        setUser({
+        name: details.name,
+        email: details.email
+      })
+     
+    }  else {
+     console.log("Details Do Not Match!");
+     setError("Details Do Not Match!");
+    }
+  }
+
+  const Logout = () => {
+    setUser({ name: "", email: ""})
+  }
 
   return (
-    <Router>
-      <Navbar />
-        <Routes>
-          <Route exact path='/' element={<ShowRoom />}></Route>
-          <Route exact path='/about-franhel' element={<AboutUs />}></Route>
-          <Route exact path='/services' element={<Services />}></Route>
-        </Routes>
-
-    </Router>
-  )
+    <div className="App">
+        {(user.email !== "") ? (
+          <div className="welcome">
+            <h2>Welcome, <span>{user.name}</span></h2>
+            <button onClick={Logout}>Logout</button>
+          </div>
+         ) : (
+          <LoginForm Login={Login} error={error} />
+        )} 
+         <SignupForm />
+    </div> 
+   );
 }
-
-export default App
+export default App;
