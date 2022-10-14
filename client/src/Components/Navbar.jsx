@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
+import { Dialog } from '@material-ui/core'
+import SignUp from './SignUp'
+import Login from "./Login"
+
+function Navbar({ onSignUp, onLogin }) {
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true)
+  }
+ 
+  const handleClose = () => {
+    setOpen(false)
+  }
 
 
-function Navbar() {
   return (
     
     <div className='bg-img'>
@@ -16,12 +30,19 @@ function Navbar() {
                 <Link className="icon nav-link" aria-current="page" to="/" >Home</Link>
                 <Link className="icon nav-link" to="/about-franhel" >About us</Link>
                 <Link className="icon nav-link" to="/services" >Contact us</Link>
-                <Link className="icon nav-link" to="/login" >Login</Link>
+                <Link className="icon nav-link" to="/login" onClick={handleOpen}>Login</Link>
               </div>
-              <button type="button" id ="btx" className ="btn btn-danger ml-auto" >Create account</button>
+              <button type="button" className ="btn btn-danger ml-auto" onClick={handleOpen}>Create account</button>
             </div>
           </div>
         </nav>
+
+        <Dialog open={open} onClose={handleClose}>
+         <SignUp onSignUp={onSignUp} handleClose={handleClose}/>
+       </Dialog>
+       <Dialog open={open} onClose={handleClose}>
+         <Login onLogin={onLogin}/>
+       </Dialog>
 
         <center className="home-tab">
           <div className='para'>

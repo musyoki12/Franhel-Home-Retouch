@@ -21,49 +21,36 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function SignUp ({ handleClose, onSignUp }) {
+function Login ({ handleClose, onLogin }) {
 
   const classes = useStyles();
-  const [name, setName] = useState("")
   const [username, setUsername] = useState("")
-  const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [passwordConfirmation, setPasswordConfirmation] = useState("")
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newClient = {
-      name: name,
+    const returnClient = {
       username: username,
-      email: email,
-      password: password,
-      password_confirmation: passwordConfirmation
+      password: password
     }
 
-    fetch("/signup", {
+    fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type":"application/json"
       },
-      body: JSON.stringify(newClient)
+      body: JSON.stringify(returnClient)
     })
     .then((resp) => resp.json())
-    .then((data) => onSignUp(data))
+    .then((data) => onLogin(data))
 
     handleClose();
   }
 
   return (
       <form className={classes.root} onSubmit={handleSubmit}>
-        <TextField 
-          label="Preferred Name" 
-          variant="filled" 
-          required
-          value={name}
-          onChange = {(e) => setName(e.target.value)}
-        />
 
         <TextField 
           label="Username" 
@@ -71,15 +58,6 @@ function SignUp ({ handleClose, onSignUp }) {
           required
           value={username}
           onChange = {(e) => setUsername(e.target.value)}
-        />
-
-        <TextField 
-          label="Email Address" 
-          variant="filled" 
-          type="email" 
-          required
-          value={email}
-          onChange = {(e) => setEmail(e.target.value)}
         />
 
         <TextField 
@@ -91,21 +69,11 @@ function SignUp ({ handleClose, onSignUp }) {
           onChange = {(e) => setPassword(e.target.value)}
         />
 
-       <TextField 
-          label="Confirm password" 
-          variant="filled" 
-          type="text"
-          required
-          value={passwordConfirmation}
-          onChange = {(e) => setPasswordConfirmation(e.target.value)}
-        />
-
         <div>
-          <Button variant="contained" onClick={handleClose}>Cancel</Button>
-          <Button type="submit" variant="contained">Sign up</Button>
+          <Button type="submit" variant="contained">Login</Button>
         </div>
       </form>
   )
 }
 
-export default SignUp;
+export default Login;
