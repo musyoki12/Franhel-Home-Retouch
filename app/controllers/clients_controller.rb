@@ -11,6 +11,15 @@ class ClientsController < ApplicationController
         end
     end
 
+# Log-in feature
+    def show 
+        client = Client.find_by(id: session[:client_id])
+        if client 
+            render json: client, status: :created
+        else
+            render json: { errors: "Not authorized" }, status: :unprocessable_entity
+        end 
+    end
 
     private
 
