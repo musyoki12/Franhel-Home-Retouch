@@ -76,4 +76,11 @@
   justify-content: center;
   /* color: red; */
 
+  text-align: center;
+  color:orchid;
+  /* background-color:burlywood; */
+}
+.navbar-nav ul li{
+  display: flex;
+  float:left;
 }
