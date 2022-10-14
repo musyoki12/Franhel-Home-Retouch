@@ -41,3 +41,16 @@
  ## Installaion Process
  *****
  * Clone this repo using this command : git clone "https://github.com/musyoki12/Franhel-Home-Retouch.git"
+ * Unzip the downloaded files in a folder of choice.
+ * Open the index file from the zipped file wih browser of choice but prefferably google chrome.
+ *****
+[Back to top](#franhel-home-retouch)
+ 
+ ## Technology Used
+ * Ruby
+ * Javascript
+ * HTML
+ * CSS
+[Back to top](#franhel-home-retouch)
+
+
