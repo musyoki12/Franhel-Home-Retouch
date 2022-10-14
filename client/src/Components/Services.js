@@ -34,7 +34,7 @@ function Services() {
       <SubmitRequest onAddService={handleAddService}/>
       <center style={{margin: 5+"vh"}} ><h1>Welcome {"{User}"}</h1></center>
       <div className='client-area'>
-        <div style={{marginLeft: 2+"vw"}}>
+        <div className='row col-md-6 overflow' style={{marginLeft: 2+"vw"}}>
           <ServiceDets />
         </div>
         <div className='services-log'>
