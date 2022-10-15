@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import { Dialog } from '@material-ui/core'
+import { Dialog, Button } from '@material-ui/core'
 import SignUp from './SignUp'
 import Login from "./Login"
 
@@ -9,23 +9,16 @@ import Login from "./Login"
 function Navbar({ onSignUp, onLogin }) {
 
   const [open, setOpen] = useState(false);
-  const [on, setOn] = useState(false);
+  // const [showSignUp, setShowSignUp] = useState(true);
 
 
   const handleOpen = () => {
     setOpen(true)
   }
  
+
   const handleClose = () => {
     setOpen(false)
-  }
-
-  const handleLogin = () => {
-    setOn(true)
-  }
- 
-  const handleNotLogin = () => {
-    setOn(false)
   }
 
 
@@ -40,24 +33,36 @@ function Navbar({ onSignUp, onLogin }) {
             <div className="nav-icon">
               <div className="nav-icons">
                 <Link className="icon nav-link" aria-current="page" to="/" >Home</Link>
-                <Link className="icon nav-link" to="/about-franhel" >About us</Link>
-                <Link className="icon nav-link" to="/contact-us" >Contact us</Link>
-                <Link className="icon nav-link" onClick={handleLogin}>Login</Link>
+                <Link className="icon nav-link" to="/about" >About us</Link>
+                <Link className="icon nav-link" to="/services" >Contact us</Link>
+                <Link className="icon nav-link" to="/login" >Login</Link>
               </div>
               <button type="button" className ="btn btn-danger ml-auto" onClick={handleOpen}>Create account</button>
             </div>
           </div>
         </nav>
-
-
+        
         <Dialog open={open} onClose={handleClose}>
-         <SignUp onSignUp={onSignUp} handleClose={handleClose} />
-       </Dialog>
+          <SignUp onSignUp={onSignUp} handleClose={handleClose} />
+        </Dialog>
 
-
-       <Dialog on={on} onClose={handleNotLogin}>
+{/*    
+      {showSignUp ? (
+        <>
+        <Dialog open={open} onClose={handleClose}>
+          <SignUp onSignUp={onSignUp} handleClose={handleClose} />
+        </Dialog>
+        <p>
+          ALready have an account?
+          <Button>Login</Button>
+        </p>
+        </>
+      ):(
+        <Dialog open={open} onClose={handleClose}>
          <Login onLogin={onLogin} />
-       </Dialog>
+        </Dialog>
+        
+      )} */}
 
         <center className="home-tab">
           <div className='para'>
@@ -66,10 +71,10 @@ function Navbar({ onSignUp, onLogin }) {
           </div>
 
           <p className='sub'>Subscribe to our newsletter</p>
-          <form class="d-flex" role="search">
+          <form className="d-flex" role="search">
             <label className='form-label'></label>
-            <input class="form-control me-2" type="search" />
-            <button class="btn btn-danger color" type="submit">Subscribe</button>
+            <input className="form-control me-2" type="search" />
+            <button className="btn btn-danger color" type="submit">Subscribe</button>
           </form>
         </center>
       </div>

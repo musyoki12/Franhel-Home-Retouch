@@ -9,7 +9,7 @@ function Services() {
   const [services, setServices] = useState([])
 
   useEffect(() => {
-    fetch("/services")
+    fetch("/clients/services")
     .then((resp) => resp.json())
     .then((data) => setServices(data))
   }, [])
@@ -22,13 +22,16 @@ function Services() {
     setServices([...services, newService])
   }
 
+  console.log(services)
+  console.log("try")
+
   const handleUpdate = (updatedService) => {
     const updatedArray = services.map((service) => {
       return service.id === updatedService.id ? updatedService : service
     })
     setServices(updatedArray)
   }
-  console.log(services)
+
   return (
     <div>
       <SubmitRequest onAddService={handleAddService}/>

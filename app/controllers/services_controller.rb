@@ -63,6 +63,6 @@ class ServicesController < ApplicationController
   end
 
   def find_service
-    Service.find_by(service: params[:service])
+    Service.find_by(id: params[:id])
   end
 end

@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function SignUp ({ handleClose, onSignUp }) {
+function SignUp ({ handleClose, onLogin }) {
 
   const classes = useStyles();
   const [name, setName] = useState("")
@@ -54,7 +54,7 @@ function SignUp ({ handleClose, onSignUp }) {
     })
     .then((r) => {
       if (r.ok) {
-        r.json().then((user) => onSignUp(user))
+        r.json().then((user) => onLogin(user))
       } else {
         r.json().then((err) => setErrors(err.errors))
       }
@@ -110,7 +110,7 @@ function SignUp ({ handleClose, onSignUp }) {
 
         <div>
           <Button variant="contained" onClick={handleClose}>Cancel</Button>
-          <Link type="submit" variant="contained" to="/login">Sign up</Link>
+          <Button type="submit" variant="contained" to="/login">Sign up</Button>
         </div>
       </form>
   )

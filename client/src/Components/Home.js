@@ -6,6 +6,7 @@ import Navbar from './Navbar'
 import ShowRoom from './ShowRoom'
 import Footer from './Footer'
 import Login from './Login'
+import LoginPage from './LoginPage'
 
 
 
@@ -22,6 +23,8 @@ function Home() {
     })
   }, [])
 
+  // if (user) return <LoginPage onLogin={setUser}/>
+
   return (
     <>
       {user ? (
@@ -29,6 +32,10 @@ function Home() {
           <Navbar user={user} setUser={setUser}/>
           <Routes>
             <Route exact path='/' element={<ShowRoom />}></Route>
+            <Route  path='/about' element={<AboutUs />}></Route>
+            <Route  path='/services' element={<Services />}></Route>
+            {/* <Route path='/login' element={<LoginPage onLogin={setUser}/>}></Route> */}
+
           </Routes>
           <Footer />
         </Router>
@@ -39,9 +46,11 @@ function Home() {
 
           <Routes> 
             <Route exact path='/' element={<ShowRoom />}></Route>
-            <Route exact path='/about-franhel' element={<AboutUs />}></Route>
-            <Route exact path='/services' element={<Services />}></Route>
-            <Route exact path='/login' element={<Login />}></Route>
+            {/* <Route  path='/about' element={<AboutUs />}></Route> */}
+            {/* <Route  path='/contact-us' element={<ContactUs />}></Route> */}
+            {/* <Route  path='/login' element={<Login />}></Route> */}
+            <Route path='/login' element={<LoginPage />}></Route>
+
           </Routes>
 
           <Footer />

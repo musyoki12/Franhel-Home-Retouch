@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { TextField, Button, makeStyles, FormField } from '@material-ui/core'
+// import Services from './Services';
 
 
 const useStyles = makeStyles(theme => ({
@@ -21,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Login ({ handleNotLogin, onLogin }) {
+function Login ({ onLogin }) {
 
   const classes = useStyles();
   const [username, setUsername] = useState("");
@@ -51,7 +52,8 @@ function Login ({ handleNotLogin, onLogin }) {
         resp.json().then((err) =>setErrors(err.errors))
       }
     })
-    handleNotLogin();
+    // {<Services />}
+   
   }
 
   return (
@@ -67,7 +69,7 @@ function Login ({ handleNotLogin, onLogin }) {
         <TextField 
           label="password" 
           variant="filled" 
-          type="text"
+          type="password"
           required
           value={[password]}
           onChange = {(e) => setPassword(e.target.value)}
