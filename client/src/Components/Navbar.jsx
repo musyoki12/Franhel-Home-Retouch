@@ -7,7 +7,7 @@ import SubmitRequest from './SubmitRequest'
 import Login from "./Login"
 
 
-function Navbar({ onSignUp, user, setUser }) {
+function Navbar({ onSignUp, user, setUser, onAddService }) {
 
   const [open, setOpen] = useState(false);
 

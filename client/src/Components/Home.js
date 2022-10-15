@@ -31,10 +31,10 @@ function Home() {
         <Router>
           <Navbar user={user} setUser={setUser}/>
           <Routes>
-            <Route exact path='/' element={<ShowRoom />}></Route>
+            <Route exact path='/' element={<ShowRoom user={user}/>}></Route>
             <Route  path='/about' element={<AboutUs />}></Route>
             <Route  path='/services' element={<Services user={user} setUser={setUser}/>}></Route>
-            <Route path='/login' element={ user ? (<Services />):(<LoginPage />)}></Route>
+            <Route path='/login' element={ user ? (<Services />):(<LoginPage onLogin={setUser}/>)}></Route>
 
           </Routes>
           <Footer />

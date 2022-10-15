@@ -32,9 +32,8 @@ function Services({ user }) {
 
   return (
     <div className='dashboard'>
-      onAddService={handleAddService}
-      
-      {user ? (<center style={{margin: 5+"vh"}} ><h1>Welcome <span>{user.username}</span></h1></center>):(null)}
+      {/* <SubmitRequest /> */}
+      {user ? (<center style={{margin: 5+"vh"}} ><h1>Welcome <span style={{color: "orangered"}}>{user.username}</span></h1></center>):(null)}
       <div className='client-area'>
         <div className='row col-md-6 overflow' style={{marginLeft: 2+"vw"}}>
           <ServiceDets />
