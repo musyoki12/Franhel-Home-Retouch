@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Login ({ setUser }) {
+function Login ({ onLogin }) {
 
   const classes = useStyles();
   const [username, setUsername] = useState("");
@@ -47,7 +47,7 @@ function Login ({ setUser }) {
     })
     .then((resp) => {
       if (resp.ok) {
-        resp.json().then((user) => setUser(user))
+        resp.json().then((user) => onLogin(user))
       } else {
         resp.json().then((err) =>setErrors(err.errors))
       }

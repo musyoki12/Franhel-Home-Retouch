@@ -10,7 +10,6 @@ import Login from "./Login"
 function Navbar({ onSignUp, user, setUser }) {
 
   const [open, setOpen] = useState(false);
-  // const [showSignUp, setShowSignUp] = useState(true);
 
   const handleLogout = () => {
     fetch("/logout", {
@@ -21,6 +20,7 @@ function Navbar({ onSignUp, user, setUser }) {
         setUser(null)
       }
     })
+    
   }
 
 
@@ -44,14 +44,15 @@ function Navbar({ onSignUp, user, setUser }) {
             <Link className="navbar-brand " style={{color: "white", fontSize: 17+"px", marginLeft: 1+"vw"}} to="/">Franhel <span style={{color: "orangered"}}> HOME <br/> RETOUCH</span></Link>
             <div className="nav-icon">
               <div className="nav-icons">
-                
+                {user ? (
+                <Link className="icon nav-link" style={{color: "orangered"}} to="/services">Dashboard</Link>):(null)}
                 <Link className="icon nav-link" aria-current="page" to="/" >Home</Link>
                 <Link className="icon nav-link" to="/about" >About us</Link>
                 <Link className="icon nav-link" to="/services" >Contact us</Link>
                 {user ? (
                   <>
-                    <button onClick={handleLogout}>Logout</button>
-                    <SubmitRequest />
+                    <Link className='logout icon nav-link' to="/" onClick={handleLogout}>Logout</Link>
+                    <SubmitRequest onAddService={onAddService}/>
                   </>
                 ):(
                   <>

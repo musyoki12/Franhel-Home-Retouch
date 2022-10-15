@@ -23,7 +23,7 @@ function Home() {
     })
   }, [])
 
-  // if (user) return <LoginPage onLogin={setUser}/>
+  // !user ? (<LoginPage onLogin={setUser}/>):(null)
 
   return (
     <>

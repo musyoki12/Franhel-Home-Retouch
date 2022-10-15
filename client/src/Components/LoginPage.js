@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 
-function LoginPage({ onLogin, setUser }) {
+function LoginPage({ onLogin }) {
 
   const [showLogin, setShowLogin] = useState(true)
 
@@ -16,7 +16,7 @@ function LoginPage({ onLogin, setUser }) {
       <h3>Login or create an account</h3>
         {showLogin ? (
       <>
-        <Login onLogin={onLogin} setUser={setUser}/>
+        <Login onLogin={onLogin} />
         {/* <Divider /> */}
         <p>
           Don't have an account? 
