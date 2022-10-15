@@ -19,8 +19,8 @@ class ServicesController < ApplicationController
   end
 
   def create
-    service = Service.create(service_params)
-    if service.valid?
+    service = Service.create(service: params[:service])
+    if service
       render json: service, status: :created
     else
       render json: [error: "validation errors"], status: :unprocessable_entity
@@ -55,7 +55,7 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.permit(:service, :location, :address, :contact_info, :description)
+    # params.permit(:service, :location, :address, :contact_info, :description, :client_id)
   end
 
   def find_service
