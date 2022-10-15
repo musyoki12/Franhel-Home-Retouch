@@ -29,6 +29,7 @@ code {
   background-color: beige;
   border-radius: 10px;
   margin-right: 2vw;
+
 }
 
 .logs {
@@ -84,7 +85,7 @@ code {
 }
 
 .overflow {
-  height: 167vh;
+  height: 150vh;
   overflow-y: scroll;
 }
 
@@ -98,4 +99,15 @@ code {
   padding-bottom: 3vh;
   border-radius: 50px;
   background-color: #552607ab;
+}
+
+/* .logout {
+  /* border: 1px solid red; */
+  /* background-color: orangered; */
+  /* padding: 5px;
+  border-radius: 10px; */
+/* } */ 
+
+.dashboard {
+  margin-bottom: 10vh;
 }

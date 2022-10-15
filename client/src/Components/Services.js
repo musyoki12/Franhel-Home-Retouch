@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import ServiceDets from './ServiceDets'
-// import ServiceList from './ServiceList'
+import ServiceList from './ServiceList'
 import SubmitRequest from './SubmitRequest'
 
 
 
-function Services() {
+function Services({ user }) {
   const [services, setServices] = useState([])
 
   useEffect(() => {
-    fetch("/clients/services")
+    fetch("/services")
     .then((resp) => resp.json())
     .then((data) => setServices(data))
   }, [])
@@ -22,8 +22,6 @@ function Services() {
     setServices([...services, newService])
   }
 
-  console.log(services)
-  console.log("try")
 
   const handleUpdate = (updatedService) => {
     const updatedArray = services.map((service) => {
@@ -33,16 +31,17 @@ function Services() {
   }
 
   return (
-    <div>
-      <SubmitRequest onAddService={handleAddService}/>
-      <center style={{margin: 5+"vh"}} ><h1>Welcome {"{User}"}</h1></center>
+    <div className='dashboard'>
+      onAddService={handleAddService}
+      
+      {user ? (<center style={{margin: 5+"vh"}} ><h1>Welcome <span>{user.username}</span></h1></center>):(null)}
       <div className='client-area'>
         <div className='row col-md-6 overflow' style={{marginLeft: 2+"vw"}}>
           <ServiceDets />
         </div>
-        <div className='services-log'>
+        <div className='services-log overflow'>
           <center><h4>Services Log</h4></center>
-          {/* {services.map((service) => {
+          {services.map((service) => {
             return(
               <div  key={service.id}>
                 <ServiceList
@@ -57,7 +56,7 @@ function Services() {
                 />
               </div>
             )
-          })} */}
+          })}
         </div>
       </div>
     </div>
