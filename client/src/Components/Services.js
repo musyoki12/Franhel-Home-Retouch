@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ServiceDets from './ServiceDets'
-import ServiceList from './ServiceList'
+// import ServiceList from './ServiceList'
 import SubmitRequest from './SubmitRequest'
 
 
@@ -42,7 +42,7 @@ function Services() {
         </div>
         <div className='services-log'>
           <center><h4>Services Log</h4></center>
-          {services.map((service) => {
+          {/* {services.map((service) => {
             return(
               <div  key={service.id}>
                 <ServiceList
@@ -57,7 +57,7 @@ function Services() {
                 />
               </div>
             )
-          })}
+          })} */}
         </div>
       </div>
     </div>
