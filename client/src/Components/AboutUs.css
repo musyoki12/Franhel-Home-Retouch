@@ -1,0 +1,77 @@
+
+
+
+
+.image{
+background-color:rgb(174, 174, 201);
+}
+.head{
+    text-align: center;
+    color:orange;
+    border-radius: 23px;
+}
+.span{
+    color:white
+}
+
+.team{
+
+    display:flex;
+    justify-content: center;
+    position: sticky;
+    
+
+}
+#img{
+    margin-left: 8px;
+    margin-right: 12px;
+}
+.team1{
+    text-align:center;
+}
+.names{
+    text-align: center;
+}
+
+
+
+/* Include padding and border in total box size
+{
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that float next to each other */
+  .cards {
+    float: left;
+    width: 45%;
+    padding: 40px;
+    padding-left:70px;
+    padding-right: 70px;
+    height: 405px;
+    margin:30px;
+    margin-right:30px;
+    margin-bottom: 70px;
+    background-color: orchid;
+    line-height:2;
+    position: sticky;
+  }
+
+  .card2 {
+    float: left;
+    width: 45%;
+    padding: 40px;
+    padding-left:70px;
+    padding-right: 70px;
+    height: 405px;
+    margin:30px;
+    margin-right:30px;
+    margin-bottom: 70px;
+    background-color:orangered;
+    line-height:2;
+    position: a;
+  }
+.card ul li{
+    list-style-type:square;
+}
+
+          
