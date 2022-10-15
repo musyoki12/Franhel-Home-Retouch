@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { TextField, Button, makeStyles } from '@material-ui/core'
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles(theme => ({
@@ -30,7 +31,7 @@ function SignUp ({ handleClose, onSignUp }) {
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("")
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setErrors] = useState([]);
 
 
   const handleSubmit = (e) => {
@@ -51,8 +52,13 @@ function SignUp ({ handleClose, onSignUp }) {
       },
       body: JSON.stringify(newClient)
     })
-    .then((resp) => resp.json())
-    .then((data) => onSignUp(data))
+    .then((r) => {
+      if (r.ok) {
+        r.json().then((user) => onSignUp(user))
+      } else {
+        r.json().then((err) => setErrors(err.errors))
+      }
+    })
 
     handleClose();
   }
@@ -104,7 +110,7 @@ function SignUp ({ handleClose, onSignUp }) {
 
         <div>
           <Button variant="contained" onClick={handleClose}>Cancel</Button>
-          <Button type="submit" variant="contained">Sign up</Button>
+          <Link type="submit" variant="contained" to="/login">Sign up</Link>
         </div>
       </form>
   )

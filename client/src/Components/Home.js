@@ -5,6 +5,7 @@ import Services from './Services'
 import Navbar from './Navbar'
 import ShowRoom from './ShowRoom'
 import Footer from './Footer'
+import Login from './Login'
 
 
 
@@ -30,24 +31,22 @@ function Home() {
             <Route exact path='/' element={<ShowRoom />}></Route>
           </Routes>
           <Footer />
-
         </Router>
 
-      ):(
+      ):( 
         <Router>
           <Navbar />
 
-          <Routes>
+          <Routes> 
             <Route exact path='/' element={<ShowRoom />}></Route>
             <Route exact path='/about-franhel' element={<AboutUs />}></Route>
             <Route exact path='/services' element={<Services />}></Route>
+            <Route exact path='/login' element={<Login />}></Route>
           </Routes>
 
           <Footer />
       </Router>
-      )}
-
-
+       )} 
     </>
   )
 }

@@ -41,7 +41,7 @@ function Navbar({ onSignUp, onLogin }) {
               <div className="nav-icons">
                 <Link className="icon nav-link" aria-current="page" to="/" >Home</Link>
                 <Link className="icon nav-link" to="/about-franhel" >About us</Link>
-                <Link className="icon nav-link" to="/services" >Contact us</Link>
+                <Link className="icon nav-link" to="/contact-us" >Contact us</Link>
                 <Link className="icon nav-link" onClick={handleLogin}>Login</Link>
               </div>
               <button type="button" className ="btn btn-danger ml-auto" onClick={handleOpen}>Create account</button>

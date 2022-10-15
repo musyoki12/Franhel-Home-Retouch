@@ -9,6 +9,7 @@ class ServicesController < ApplicationController
     end
   end
 
+
   def show
     service = find_service
     if service
@@ -18,14 +19,16 @@ class ServicesController < ApplicationController
     end
   end
 
+
   def create
-    service = Service.create(service: params[:service])
-    if service
+    service = @current_user.services.create(service_params)
+    if service.valid?
       render json: service, status: :created
     else
       render json: [error: "validation errors"], status: :unprocessable_entity
     end
   end
+
 
   def update
     service = find_service
@@ -41,6 +44,7 @@ class ServicesController < ApplicationController
     end
   end
 
+
   def destroy
     service = find_service
     if service
@@ -55,10 +59,10 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    # params.permit(:service, :location, :address, :contact_info, :description, :client_id)
+    params.permit(:service, :location, :address, :contact_info, :description)
   end
 
   def find_service
-    Service.find_by(id: params[:id])
+    Service.find_by(service: params[:service])
   end
 end
