@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+    skip_before_action :authorize, only: [:create, :delete]
 
 # Sign-up feature
     def create 
@@ -11,14 +12,15 @@ class ClientsController < ApplicationController
         end
     end
 
+    def delete
+        client = Client.find_by(id: params[:id])
+        client.destroy
+        head :no_content
+    end
+
 # Log-in feature
     def show 
-        client = Client.find_by(id: session[:client_id])
-        if client 
-            render json: client, status: :created
-        else
-            render json: { errors: "Not authorized" }, status: :unprocessable_entity
-        end 
+       render json: @current_user
     end
 
     private
