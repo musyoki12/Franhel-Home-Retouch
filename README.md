@@ -13,7 +13,7 @@
  - [Description](#description) 
  - [Features](#features)
  - [Requirements](#requirements)
- - [Installaion Process](#installation-process)
+ - [Installation Process](#installation-process)
  - [Live link](live-link)
  - [Technology Used](#technology-used)
  - [License](#license)
