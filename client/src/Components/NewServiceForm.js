@@ -67,7 +67,7 @@ function NewServiceForm ({ handleClose, onAddService }) {
         />
 
         <TextField 
-          label="Location of building" 
+          label="Apartment" 
           variant="filled" 
           required
           value={location}
@@ -75,7 +75,7 @@ function NewServiceForm ({ handleClose, onAddService }) {
         />
 
         <TextField 
-          label="Address information" 
+          label="Location" 
           variant="filled" 
           type="text" 
           required

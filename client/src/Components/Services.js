@@ -35,7 +35,7 @@ function Services({ user }) {
       {/* <SubmitRequest /> */}
       {user ? (<center style={{margin: 5+"vh"}} ><h1>Welcome <span style={{color: "orangered"}}>{user.username}</span></h1></center>):(null)}
       <div className='client-area'>
-        <div className='row col-md-6 overflow' style={{marginLeft: 2+"vw"}}>
+        <div className='row col-md-6 overflow' style={{marginLeft: 2+"vw", marginRight: 2+"vw"}}>
           <ServiceDets />
         </div>
         <div className='services-log overflow'>
