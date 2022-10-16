@@ -1,51 +1,59 @@
-import React, { useState } from 'react';
-import LoginForm from './LoginForm';
-import SignupForm from './SignupForm';
+import React, { useEffect, useState } from 'react'
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import AboutUs from './AboutUs'
+import Services from './Services'
+import Navbar from './Navbar'
+import ShowRoom from './ShowRoom'
+import Footer from './Footer'
+import LoginPage from './LoginPage'
 
 
 
 function App() {
-  const adminUser = {
-    email: "admin@gmail.com",
-    password: "admin123"
-  }
 
-  const [user, setUser] = useState({name: "", email: ""});
-  const [error, setError] = useState("");
+  const [user, setUser] = useState(null)
 
-  const Login = details => {
-    console.log(details)
-    
-    if (details.email === adminUser.email && details.password === adminUser.password) {
-        console.log("Logged in");
-    
-        setUser({
-        name: details.name,
-        email: details.email
-      })
-     
-    }  else {
-     console.log("Details Do Not Match!");
-     setError("Details Do Not Match!");
-    }
-  }
+  useEffect(() => {
+    fetch("/me")
+    .then((resp) => {
+      if (resp.ok){
+        resp.json().then((user) => setUser(user))
+      }
+    })
+  }, [])
 
-  const Logout = () => {
-    setUser({ name: "", email: ""})
-  }
+  // !user ? (<LoginPage onLogin={setUser}/>):(null)
 
   return (
-    <div className="App">
-        {(user.email !== "") ? (
-          <div className="welcome">
-            <h2>Welcome, <span>{user.name}</span></h2>
-            <button onClick={Logout}>Logout</button>
-          </div>
-         ) : (
-          <LoginForm Login={Login} error={error} />
-        )} 
-         <SignupForm />
-    </div> 
-   );
+    <>
+      {user ? (
+        <Router>
+          <Navbar user={user} setUser={setUser}/>
+          <Routes>
+            <Route exact path='/' element={<ShowRoom user={user}/>}></Route>
+            <Route  path='/about' element={<AboutUs />}></Route>
+            <Route  path='/services' element={<Services user={user} setUser={setUser}/>}></Route>
+            <Route path='/login' element={ user ? (<Services user={user}/>):(<LoginPage onLogin={setUser}/>)}></Route>
+          </Routes>
+          <Footer />
+        </Router>
+
+      ):( 
+        <Router>
+          <Navbar />
+
+          <Routes> 
+            <Route exact path='/' element={<ShowRoom />}></Route>
+            <Route  path='/about' element={<AboutUs />}></Route>
+            {/* <Route  path='/contact-us' element={<ContactUs />}></Route> */}
+            <Route path='/login' element={<LoginPage />}></Route>
+          </Routes>
+
+          <Footer />
+      </Router>
+       )} 
+    </>
+  )
 }
-export default App;
+
+export default App
