@@ -49,12 +49,11 @@
   background-color: #4b2004a1;
 }
 
-.home-tab button {
+.home-tab button, .nav-icon button{
   background-color: orangered;
 }
 
 .nav-color {
-  border: 1px solid #4b2004a1;
   background-color: #4b2004a1;
   height: 10vh;
   color: white;
@@ -74,13 +73,18 @@
 .nav-icons {
   display: flex;
   justify-content: center;
-  /* color: red; */
-
   text-align: center;
-  color:orchid;
-  /* background-color:burlywood; */
+  color:white;
 }
+
+
 .navbar-nav ul li{
   display: flex;
   float:left;
+}
+
+.logout {
+  background-color: orangered;
+  padding: 5px 10px;
+  border-radius: 10px 0;
 }

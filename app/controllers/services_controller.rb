@@ -1,13 +1,14 @@
 class ServicesController < ApplicationController
 
   def index
-    services = Service.all
+    services = @current_user.services.all
     if services
       render json: services, status: :ok
     else
       render json: {error: "No services found"}, status: :not_found
     end
   end
+
 
   def show
     service = find_service
@@ -18,14 +19,16 @@ class ServicesController < ApplicationController
     end
   end
 
+
   def create
-    service = Service.create(service_params)
+    service = @current_user.services.create(service_params)
     if service.valid?
       render json: service, status: :created
     else
       render json: [error: "validation errors"], status: :unprocessable_entity
     end
   end
+
 
   def update
     service = find_service
@@ -40,6 +43,7 @@ class ServicesController < ApplicationController
       render json: {error: "Service not found"},status: :not_found
     end
   end
+
 
   def destroy
     service = find_service
