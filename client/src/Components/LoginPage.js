@@ -23,7 +23,9 @@ function LoginPage({ onLogin }) {
           <button onClick={() => setShowLogin(false)}>Sign up</button>
         </p>
       </>
+
     ):(
+      
       <>
         <SignUp onLogin={onLogin} />
         {/* <Divider /> */}

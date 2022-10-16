@@ -48,12 +48,13 @@ function Login ({ onLogin }) {
     })
     .then((resp) => {
       if (resp.ok) {
+        console.log(resp)
         resp.json().then((user) => onLogin(user))
       } else {
         resp.json().then((err) =>setErrors(err.errors))
       }
     })
-    // {<Services />}
+    
    
   }
 

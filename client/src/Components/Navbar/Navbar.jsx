@@ -5,7 +5,7 @@ import { Dialog } from '@material-ui/core'
 import SignUp from '../Forms/SignUp'
 
 
-function Navbar({ onSignUp, user, setUser }) {
+function Navbar({ onLogin, user, setUser }) {
 
   const [open, setOpen] = useState(false);
 
@@ -64,7 +64,7 @@ function Navbar({ onSignUp, user, setUser }) {
         </nav>
         
         <Dialog open={open} onClose={handleClose}>
-          <SignUp onSignUp={onSignUp} handleClose={handleClose} />
+          <SignUp onLogin={onLogin} handleClose={handleClose} />
         </Dialog>
 
 

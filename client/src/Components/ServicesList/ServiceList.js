@@ -29,7 +29,7 @@ function ServiceList({ id, onDelete, onUpdate, service, location, address, email
       <div className="logs">
         <ul>
           <h6><span>Service: </span>{service}</h6>
-          <li><span>Location: </span>{location}</li>
+          <li><span>Property: </span>{location}</li>
           <li><span>Service: </span>{address}</li>
           <li><span>Contact info: </span>{contact_info}</li>
           {/* <li><span>Email address: </span>{email}</li> */}

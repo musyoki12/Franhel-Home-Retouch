@@ -32,20 +32,21 @@ function App() {
             <Route exact path='/' element={<ShowRoom user={user}/>}></Route>
             <Route  path='/about' element={<AboutUs />}></Route>
             <Route  path='/services' element={<Services user={user} setUser={setUser}/>}></Route>
-            <Route path='/login' element={ user ? (<Services user={user}/>):(<LoginPage onLogin={setUser}/>)}></Route>
+            <Route path='/login' element={ user ? (<Services user={user} />):(<LoginPage user={user} onLogin={setUser}/>)}></Route>
           </Routes>
           <Footer />
         </Router>
 
       ):( 
+
         <Router>
-          <Navbar />
+          <Navbar onLogin={setUser}/>
 
           <Routes> 
             <Route exact path='/' element={<ShowRoom />}></Route>
             <Route  path='/about' element={<AboutUs />}></Route>
             {/* <Route  path='/contact-us' element={<ContactUs />}></Route> */}
-            <Route path='/login' element={<LoginPage />}></Route>
+            <Route path='/login' element={<LoginPage onLogin={setUser}/>}></Route>
           </Routes>
 
           <Footer />
