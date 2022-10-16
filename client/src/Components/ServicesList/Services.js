@@ -5,7 +5,7 @@ import SubmitRequest from '../SubmitRequest'
 
 
 
-function Services({ user, onAddService }) {
+function Services({ user }) {
   const [services, setServices] = useState([])
 
   useEffect(() => {
