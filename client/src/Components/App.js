@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import AboutUs from './AboutUs'
+import AboutUs from './About/AboutUs'
 import Services from './ServicesList/Services'
 import Navbar from './Navbar/Navbar'
 import ShowRoom from './showroom/ShowRoom'
