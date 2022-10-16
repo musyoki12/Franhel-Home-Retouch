@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from '@material-ui/core'
 import './ShowRoom.css'
-import Data from './Data'
+import Data from './data/Data'
 import Card from './Card'
 
 

@@ -34,7 +34,7 @@ function Home() {
             <Route exact path='/' element={<ShowRoom user={user}/>}></Route>
             <Route  path='/about' element={<AboutUs />}></Route>
             <Route  path='/services' element={<Services user={user} setUser={setUser}/>}></Route>
-            <Route path='/login' element={ user ? (<Services />):(<LoginPage onLogin={setUser}/>)}></Route>
+            <Route path='/login' element={ user ? (<Services user={user}/>):(<LoginPage onLogin={setUser}/>)}></Route>
 
           </Routes>
           <Footer />
