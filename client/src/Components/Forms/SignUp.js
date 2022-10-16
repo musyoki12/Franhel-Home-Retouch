@@ -30,7 +30,6 @@ function SignUp ({ handleClose, onLogin }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("")
-  const [submitted, setSubmitted] = useState(false);
   const [error, setErrors] = useState([]);
 
 
@@ -60,7 +59,7 @@ function SignUp ({ handleClose, onLogin }) {
       }
     })
 
-    handleClose();
+    // handleClose();
   }
 
   return (

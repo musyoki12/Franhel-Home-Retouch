@@ -20,7 +20,7 @@ function LoginPage({ onLogin }) {
         {/* <Divider /> */}
         <p>
           Don't have an account? 
-          <button onClick={() => setShowLogin(false)}>Sign up</button>
+          <button onClick={() => setShowLogin(false)}  style={{border: "none"}}>Sign up</button>
         </p>
       </>
 
@@ -30,7 +30,7 @@ function LoginPage({ onLogin }) {
         <SignUp onLogin={onLogin} />
         {/* <Divider /> */}
         Already have an account?
-        <button onClick={() => setShowLogin(true)}>Login</button>
+        <button onClick={() => setShowLogin(true)} style={{border: "none"}}>Login</button>
       </>
       )}
       Not interested? Go back to <Link to="/" >Home</Link>

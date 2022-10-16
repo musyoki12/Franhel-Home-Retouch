@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import { Dialog } from '@material-ui/core'
-import SignUp from '../Forms/SignUp'
+// import { Dialog } from '@material-ui/core'
+// import SignUp from '../Forms/SignUp'
 
 
-function Navbar({ onLogin, user, setUser }) {
+function Navbar({ user, setUser }) {
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   const handleLogout = () => {
     fetch("/logout", {
@@ -21,14 +21,14 @@ function Navbar({ onLogin, user, setUser }) {
     
   }
 
-  const handleOpen = () => {
-    setOpen(true)
-  }
+  // const handleOpen = () => {
+  //   setOpen(true)
+  // }
  
 
-  const handleClose = () => {
-    setOpen(false)
-  }
+  // const handleClose = () => {
+  //   setOpen(false)
+  // }
 
 
 
@@ -53,8 +53,8 @@ function Navbar({ onLogin, user, setUser }) {
                   </>
                 ):(
                   <>
-                    <Link className="icon nav-link" to="/login">Login</Link>
-                    <button type="button" className ="btn btn-danger ml-auto" onClick={handleOpen}>Create account</button>
+                    <Link className="icon btn btn-danger" to="/login" style={{backgroundColor: "orangered"}}>Login or <span style={{color: "black"}}> Create account</span></Link>
+                    {/* <button type="button" className =" " onClick={handleOpen}>Create account</button> */}
                   </>
                 )}
 
@@ -63,9 +63,9 @@ function Navbar({ onLogin, user, setUser }) {
           </div>
         </nav>
         
-        <Dialog open={open} onClose={handleClose}>
+        {/* <Dialog open={open} onClose={handleClose}>
           <SignUp onLogin={onLogin} handleClose={handleClose} />
-        </Dialog>
+        </Dialog> */}
 
 
         <center className="home-tab">
