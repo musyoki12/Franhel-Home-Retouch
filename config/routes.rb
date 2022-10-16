@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   resources :services
 
-  delete '/deletes', to: "clients#delete"
 
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

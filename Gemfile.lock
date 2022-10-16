@@ -93,6 +93,9 @@ GEM
     io-console (0.5.11)
     irb (1.4.2)
       reline (>= 0.3.0)
+    jbuilder (2.11.5)
+      actionview (>= 5.0.0)
+      activesupport (>= 5.0.0)
     jsonapi-renderer (0.2.2)
     loofah (2.19.0)
       crass (~> 1.0.2)
@@ -173,6 +176,7 @@ DEPENDENCIES
   debug
   faker
   foreman
+  jbuilder
   pg (~> 1.4, >= 1.4.3)
   puma (~> 5.0)
   rack-cors

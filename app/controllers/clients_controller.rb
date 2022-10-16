@@ -12,11 +12,6 @@ class ClientsController < ApplicationController
         end
     end
 
-    def delete
-        client = Client.find_by(id: params[:id])
-        client.destroy
-        head :no_content
-    end
 
 # Log-in feature
     def show 
