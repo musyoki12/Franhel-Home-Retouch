@@ -22,7 +22,6 @@ function App() {
     })
   }, [])
 
-  // !user ? (<LoginPage onLogin={setUser}/>):(null)
 
   return (
     <>
@@ -45,7 +44,7 @@ function App() {
           <Routes> 
             <Route exact path='/' element={<ShowRoom />}></Route>
             <Route  path='/about' element={<AboutUs />}></Route>
-            {/* <Route  path='/contact-us' element={<ContactUs />}></Route> */}
+            <Route  path='/contact-us' element={<ContactUs />}></Route>
             <Route path='/login' element={<LoginPage />}></Route>
           </Routes>
 

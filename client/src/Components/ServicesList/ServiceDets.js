@@ -1,5 +1,5 @@
 import React from 'react'
-import SERVICE from './data/ServiceData'
+import SERVICE from '../data/ServiceData'
 import { Link } from 'react-router-dom'
 
 
