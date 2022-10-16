@@ -9,6 +9,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "Center",
     alignItems: "center",
     padding: theme.spacing(2),
+    
 
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
@@ -21,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function NewServiceForm ({ handleClose, onAddService }) {
+function NewServiceForm ({ handleClose, onAddService, user }) {
 
   const classes = useStyles();
   const [service, setService] = useState("")
@@ -92,6 +93,13 @@ function NewServiceForm ({ handleClose, onAddService }) {
           onChange = {(e) => setContact(e.target.value)}
         />
 
+        <TextField 
+          label="Email address" 
+          variant="filled" 
+          type="email"
+          value={user.email}
+        />
+
        <TextField 
           label="Description of service" 
           variant="filled" 
@@ -103,7 +111,7 @@ function NewServiceForm ({ handleClose, onAddService }) {
 
         <div>
           <Button variant="contained" onClick={handleClose}>Cancel</Button>
-          <Button type="submit" variant="contained">Send Request</Button>
+          <Button type="submit" variant="contained">Submit</Button>
         </div>
       </form>
   )

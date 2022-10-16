@@ -3,7 +3,7 @@ import UpdateService from './UpdateService'
 import { Dialog } from '@material-ui/core'
 
 
-function ServiceList({ id, onDelete, onUpdate, service, location, address, contact_info, description }) {
+function ServiceList({ id, onDelete, onUpdate, service, location, address, email, contact_info, description }) {
   const [open, setOpen] = useState(false)
 
   const handleOpen = () => {
@@ -32,6 +32,7 @@ function ServiceList({ id, onDelete, onUpdate, service, location, address, conta
           <li><span>Location: </span>{location}</li>
           <li><span>Service: </span>{address}</li>
           <li><span>Contact info: </span>{contact_info}</li>
+          {/* <li><span>Email address: </span>{email}</li> */}
           <li><span>Description of service: </span>{description}</li>
           <div>
             <button onClick={handleOpen}>Edit Request</button>

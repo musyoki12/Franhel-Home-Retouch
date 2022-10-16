@@ -9,7 +9,7 @@ function ServiceDets() {
   return (
     <>
     <div>
-      <h6 style={{marginBottom: 5+"vh"}}>A glimpse the services you can request...</h6>
+      <center style={{marginBottom: 5+"vh"}}>A glimpse at the services you can request...</center>
     </div>
         {SERVICE.map((service) => {
           return (

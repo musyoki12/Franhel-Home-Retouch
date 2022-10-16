@@ -5,7 +5,7 @@ import SubmitRequest from './SubmitRequest'
 
 
 
-function Services({ user }) {
+function Services({ user, onAddService }) {
   const [services, setServices] = useState([])
 
   useEffect(() => {
@@ -32,14 +32,19 @@ function Services({ user }) {
 
   return (
     <div className='dashboard'>
-      {/* <SubmitRequest /> */}
-      {user ? (<center style={{margin: 5+"vh"}} ><h1>Welcome <span style={{color: "orangered"}}>{user.username}</span></h1></center>):(null)}
+      
+      (<center style={{margin: 5+"vh"}} ><h2>Franhel <span style={{color: "orangered"}}>Service Dashboard</span></h2></center>
       <div className='client-area'>
         <div className='row width col-md-6 overflow' style={{marginLeft: 2+"vw", marginRight: 2+"vw"}}>
           <ServiceDets />
         </div>
-        <div className='services-log overflow'>
-          <center><h4>Services Log</h4></center>
+        <div className='services-log'>
+          <div className='title' style={{marginBottom: 2+"vh"}}>
+            {user ? (<div><h4>Hello <span style={{color: "orangered"}}>{user.username}</span></h4></div>):(null)}
+            <SubmitRequest user={user} onAddService={handleAddService}/>
+          </div>
+
+          <div className='overflow'>
           {services.map((service) => {
             return(
               <div  key={service.id}>
@@ -49,6 +54,7 @@ function Services({ user }) {
                   location={service.location}
                   address={service.address}
                   contact_info={service.contact_info}
+                  // email={user.email}
                   description={service.description}
                   onDelete={handleDelete}
                   onUpdate={handleUpdate}
@@ -56,6 +62,7 @@ function Services({ user }) {
               </div>
             )
           })}
+          </div>
         </div>
       </div>
     </div>
