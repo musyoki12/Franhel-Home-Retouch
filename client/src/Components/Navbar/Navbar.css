@@ -73,13 +73,18 @@
 .nav-icons {
   display: flex;
   justify-content: center;
-  /* color: red; */
-
   text-align: center;
   color:white;
-  /* background-color:burlywood; */
 }
+
+
 .navbar-nav ul li{
   display: flex;
   float:left;
+}
+
+.logout {
+  background-color: orangered;
+  padding: 5px 10px;
+  border-radius: 10px 0;
 }

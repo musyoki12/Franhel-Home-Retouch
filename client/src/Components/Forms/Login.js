@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { TextField, Button, makeStyles } from '@material-ui/core'
+import { TextField, Button, makeStyles, FormField } from '@material-ui/core'
+
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -21,11 +23,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Login ({ handleNotLogin, onLogin }) {
+function Login ({ onLogin }) {
 
   const classes = useStyles();
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState([]);
 
 
   const handleSubmit = (e) => {
@@ -43,10 +46,16 @@ function Login ({ handleNotLogin, onLogin }) {
       },
       body: JSON.stringify(returnClient)
     })
-    .then((resp) => resp.json())
-    .then((data) => onLogin(data))
-
-    handleNotLogin();
+    .then((resp) => {
+      if (resp.ok) {
+        console.log(resp)
+        resp.json().then((user) => onLogin(user))
+      } else {
+        resp.json().then((err) =>setErrors(err.errors))
+      }
+    })
+    
+   
   }
 
   return (
@@ -62,12 +71,11 @@ function Login ({ handleNotLogin, onLogin }) {
         <TextField 
           label="password" 
           variant="filled" 
-          type="text"
+          type="password"
           required
           value={[password]}
           onChange = {(e) => setPassword(e.target.value)}
         />
-
         <div>
           <Button type="submit" variant="contained">Login</Button>
         </div>

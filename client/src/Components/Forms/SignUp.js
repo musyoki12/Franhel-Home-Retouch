@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { TextField, Button, makeStyles } from '@material-ui/core'
 
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -21,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function SignUp ({ handleClose, onSignUp }) {
+function SignUp ({ handleClose, onLogin }) {
 
   const classes = useStyles();
   const [name, setName] = useState("")
@@ -30,7 +31,7 @@ function SignUp ({ handleClose, onSignUp }) {
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("")
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setErrors] = useState([]);
 
 
   const handleSubmit = (e) => {
@@ -51,8 +52,13 @@ function SignUp ({ handleClose, onSignUp }) {
       },
       body: JSON.stringify(newClient)
     })
-    .then((resp) => resp.json())
-    .then((data) => onSignUp(data))
+    .then((r) => {
+      if (r.ok) {
+        r.json().then((user) => onLogin(user))
+      } else {
+        r.json().then((err) => setErrors(err.errors))
+      }
+    })
 
     handleClose();
   }
@@ -104,7 +110,7 @@ function SignUp ({ handleClose, onSignUp }) {
 
         <div>
           <Button variant="contained" onClick={handleClose}>Cancel</Button>
-          <Button type="submit" variant="contained">Sign up</Button>
+          <Button type="submit" variant="contained" to="/login">Sign up</Button>
         </div>
       </form>
   )
