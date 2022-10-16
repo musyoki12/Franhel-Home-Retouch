@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import { Dialog } from '@material-ui/core'
-import SignUp from '../Forms/SignUp'
+// import { Dialog } from '@material-ui/core'
+// import SignUp from '../Forms/SignUp'
 
 
-function Navbar({ onLogin, user, setUser }) {
+function Navbar({ user, setUser }) {
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   const handleLogout = () => {
     fetch("/logout", {
@@ -21,14 +21,14 @@ function Navbar({ onLogin, user, setUser }) {
     
   }
 
-  const handleOpen = () => {
-    setOpen(true)
-  }
+  // const handleOpen = () => {
+  //   setOpen(true)
+  // }
  
 
-  const handleClose = () => {
-    setOpen(false)
-  }
+  // const handleClose = () => {
+  //   setOpen(false)
+  // }
 
 
 
@@ -63,9 +63,9 @@ function Navbar({ onLogin, user, setUser }) {
           </div>
         </nav>
         
-        <Dialog open={open} onClose={handleClose}>
+        {/* <Dialog open={open} onClose={handleClose}>
           <SignUp onLogin={onLogin} handleClose={handleClose} />
-        </Dialog>
+        </Dialog> */}
 
 
         <center className="home-tab">

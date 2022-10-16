@@ -18,7 +18,6 @@ function ShowRoom (){
         <h1 className='show'>Our Services</h1>
         <div className='flex'>
           <div className='service-cards'>
-            <img src=''/>
             <h5>Renovation</h5>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit...
@@ -27,7 +26,6 @@ function ShowRoom (){
           </div>
 
           <div className='service-cards service-cards-two'>
-            <img src=''/>
             <h5>Electrical</h5>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit...
@@ -36,7 +34,6 @@ function ShowRoom (){
           </div>
 
           <div className='service-cards'>
-            <img src=''/>
             <h5>Painting</h5>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit...
@@ -45,7 +42,6 @@ function ShowRoom (){
           </div>
 
           <div className='service-cards'>
-            <img src=''/>
             <h5>Plumbing</h5>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit...
