@@ -51,8 +51,9 @@ function Navbar({ onSignUp, user, setUser, onAddService }) {
                 <Link className="icon nav-link" to="/services" >Contact us</Link>
                 {user ? (
                   <>
-                    <Link className='logout icon nav-link' to="/" onClick={handleLogout}>Logout</Link>
-                    <SubmitRequest onAddService={onAddService}/>
+                    
+                      <Link className='logout icon nav-link' to="/" onClick={handleLogout}>Logout</Link>
+                    
                   </>
                 ):(
                   <>

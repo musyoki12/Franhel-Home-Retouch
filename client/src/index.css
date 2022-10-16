@@ -32,6 +32,13 @@ code {
 
 }
 
+
+.services-log .title {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .logs {
   border: 1px solid beige;
   background-color: white;
