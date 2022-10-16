@@ -14,12 +14,13 @@
  - [Features](#features)
  - [Requirements](#requirements)
  - [Installation Process](#installation-process)
- - [Live link](live-link)
+ - [Live link](#live-link)
  - [Technology Used](#technology-used)
  - [License](#license)
+ - [Authors info](#authors-info)
 
  ## Description
- This project is a web application for Franhel Home Retouch that enables homeowners and renters to inquire about and receive house renovation services from their couch's comfort. An interested user can visit the website, look for some of the work Franhel has done, create an account and request a service they want. The services range from interior and exterior painting and design, plumbing services, and electrical installation, to tiling and varnishing. The admin can then reach out to them and inquire more about their expectations or scope of work. <br>
+ This project is a web application for Franhel Home Retouch that enables homeowners and renters to inquire about and receive house renovation services from their couch's comfort. An interested user can visit the website, look for some of the work Franhel has done, create an account and request a service they want. The services range from interior to exterior painting and design, plumbing services, and electrical installation, to tiling and varnishing. The admin can then reach out to them and inquire more about their expectations or scope of work. <br>
  [Back to top](#franhel-home-retouch)
 
  ## Features
@@ -38,19 +39,23 @@
 [Back to top](#franhel-home-retouch)
 
 
- ## Installaion Process
+ ## Installation Process
  *****
  * Clone this repo using this command : git clone "https://github.com/musyoki12/Franhel-Home-Retouch.git"
  * Unzip the downloaded files in a folder of choice.
  * Open the index file from the zipped file wih browser of choice but prefferably google chrome.
  *****
 [Back to top](#franhel-home-retouch)
+
+## Live link
+* Click this link to view the live application 
+[Back to top](#franhel-home-retouch)
  
  ## Technology Used
- * Ruby
- * Javascript
- * HTML
- * CSS
+ * Ruby - Used to handle the backend of the software
+ * Javascript - Used to handle the frontend side of the software
+ * HTML - Developed the basic structure of the pages
+ * CSS - Used to style the UI 
  
 [Back to top](#franhel-home-retouch)
 
@@ -76,3 +81,11 @@ SOFTWARE.
 
 [Back to top](#franhel-home-retouch)
 
+## Authors Info
+Github profiles are:
+- Brian Ndinda ~> https://github.com/musyoki12
+- Rose Maina ~> https://github.com/Rose-Maina
+- Brian Wanjala ~> https://github.com/BrianWangila
+- Amos Sifuma ~> https://github.com/AmosJune
+
+[Back to top](#franhel-home-retouch)
