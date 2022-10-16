@@ -60,7 +60,7 @@ function SignUp ({ handleClose, onLogin }) {
       }
     })
 
-    handleClose();
+    // handleClose();
   }
 
   return (

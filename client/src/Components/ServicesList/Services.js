@@ -33,7 +33,7 @@ function Services({ user }) {
   return (
     <div className='dashboard'>
       
-      (<center style={{margin: 5+"vh"}} ><h2>Franhel <span style={{color: "orangered"}}>Services Dashboard</span></h2></center>
+      <center style={{margin: 5+"vh"}} ><h2>Franhel <span style={{color: "orangered"}}>Services Dashboard</span></h2></center>
       <div className='client-area'>
         <div className='row width col-md-6 overflow' style={{marginLeft: 2+"vw", marginRight: 2+"vw"}}>
           <ServiceDets />
@@ -54,7 +54,6 @@ function Services({ user }) {
                   location={service.location}
                   address={service.address}
                   contact_info={service.contact_info}
-                  // email={user.email}
                   description={service.description}
                   onDelete={handleDelete}
                   onUpdate={handleUpdate}

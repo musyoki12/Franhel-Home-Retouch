@@ -53,8 +53,8 @@ function Navbar({ onLogin, user, setUser }) {
                   </>
                 ):(
                   <>
-                    <Link className="icon nav-link" to="/login">Login</Link>
-                    <button type="button" className ="btn btn-danger ml-auto" onClick={handleOpen}>Create account</button>
+                    <Link className="icon btn btn-danger" to="/login" style={{backgroundColor: "orangered"}}>Login or <span style={{color: "black"}}> Create account</span></Link>
+                    {/* <button type="button" className =" " onClick={handleOpen}>Create account</button> */}
                   </>
                 )}
 
