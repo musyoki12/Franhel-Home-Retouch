@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import AboutUs from './AboutUs'
-import Services from './Services'
-import Navbar from './Navbar'
-import ShowRoom from './ShowRoom'
-import Footer from './Footer'
+import Services from './ServicesList/Services'
+import Navbar from './Navbar/Navbar'
+import ShowRoom from './showroom/ShowRoom'
+import Footer from './Footer/Footer'
 import LoginPage from './LoginPage'
 
 
@@ -44,7 +44,7 @@ function App() {
           <Routes> 
             <Route exact path='/' element={<ShowRoom />}></Route>
             <Route  path='/about' element={<AboutUs />}></Route>
-            <Route  path='/contact-us' element={<ContactUs />}></Route>
+            {/* <Route  path='/contact-us' element={<ContactUs />}></Route> */}
             <Route path='/login' element={<LoginPage />}></Route>
           </Routes>
 

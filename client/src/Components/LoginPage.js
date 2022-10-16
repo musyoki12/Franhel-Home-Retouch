@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import SignUp from './SignUp'
-import Login from './Login'
+import SignUp from './Forms/SignUp'
+import Login from './Forms/Login'
 import { Link } from 'react-router-dom'
 
 

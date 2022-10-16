@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Dialog } from '@material-ui/core'
-import NewServiceForm from "./NewServiceForm";
+import NewServiceForm from "./Forms/NewServiceForm";
 
 
 function SubmitRequest({ onAddService, user }) {

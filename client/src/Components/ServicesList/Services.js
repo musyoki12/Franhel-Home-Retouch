@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ServiceDets from './ServiceDets'
 import ServiceList from './ServiceList'
-import SubmitRequest from './SubmitRequest'
+import SubmitRequest from '../SubmitRequest'
 
 
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import { Dialog, Button } from '@material-ui/core'
-import SignUp from './SignUp'
+import { Dialog } from '@material-ui/core'
+import SignUp from '../Forms/SignUp'
 
 
 function Navbar({ onSignUp, user, setUser }) {
